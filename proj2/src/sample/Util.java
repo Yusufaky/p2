@@ -13,17 +13,9 @@ public class Util {
         if (conn != null) {
             return conn;
         } else {
-
-            try {
-                Class.forName("http://127.0.0.1:63572/browser/");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Oops! Can't find class");
-                System.exit(-1);
-            }
-
             try {
                 conn = DriverManager.getConnection(
-                        "http://127.0.0.1:63572/browser/", "root", "1");
+                        "jdbc:postgresql:127.0.0.1:63572/browser/", "", "1");
             } catch (Exception e) {
                 System.out.println("ERRO " + e.getMessage());
                 System.exit(-2);
