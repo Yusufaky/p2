@@ -55,7 +55,7 @@ public class Clube {
         // PreparedStatement
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "INSERT INTO clube COLUMNS(nome, localizacao, n_atletas) VALUES(?, ?, ?)";
+        String sqlCommand = "INSERT INTO clube nome, localizacao, n_atletas VALUES(?, ?, ?)";
 
         try {
             PreparedStatement st = conn.prepareStatement(sqlCommand);
@@ -89,7 +89,7 @@ public class Clube {
                 //
                 if (rs.getString("Localizacao") != null) this.localizacao = rs.getString("MORADA");
                 else this.localizacao = "";
-                if (rs.getString("Numero de Atletas") != null) this.n_atletas = rs.getString("CPOSTAL");
+                if (rs.getString("Numero de Atletas") != null) this.n_atletas = rs.getString("Numero de Atletas");
                 else this.n_atletas = "";
             } else {
                 System.out.println("ERRO: Não existe Clubes com o ID definido ");
@@ -115,12 +115,12 @@ public class Clube {
             while (rs.next()) {
                 Clube cli = new Clube();
 
-                cli.setId_clube(rs.getInt("ID_Clube"));
-                if (rs.getString("NOME") != null) cli.setNome(rs.getString("NOME"));
+                cli.setId_clube(rs.getInt("id_clube"));
+                if (rs.getString("nome") != null) cli.setNome(rs.getString("nome"));
                 //
-                if (rs.getString("Localizacao") != null) cli.setLocalizacao(rs.getString("Localizacao"));
+                if (rs.getString("localizacao") != null) cli.setLocalizacao(rs.getString("localizacao"));
                 //
-                if (rs.getString("Numero de Atelas") != null) cli.setN_atletas(rs.getString("Numero de Atelas"));
+                if (rs.getString("n_atletas") != null) cli.setN_atletas(rs.getString("n_atletas"));
 
                 lista.add(cli);
             }
@@ -135,7 +135,7 @@ public class Clube {
     public static List<Clube> readAll(String nome) {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT IDCLIENTE, NOME, MORADA, CPOSTAL FROM CLIENTE1 WHERE NOME LIKE ?";
+        String sqlCommand = "SELECT id_clube, nome, localizacao, n_atletas FROM clube WHERE NOME LIKE ?";
 
         List<Clube> lista = new ArrayList<>();
 
@@ -148,12 +148,12 @@ public class Clube {
             while (rs.next()) {
                 Clube cli = new Clube();
 
-                cli.setId_clube(rs.getInt("ID_Clube"));
-                if (rs.getString("NOME") != null) cli.setNome(rs.getString("NOME"));
+                cli.setId_clube(rs.getInt("id_clube"));
+                if (rs.getString("nome") != null) cli.setNome(rs.getString("nome"));
                 //
-                if (rs.getString("Localizacao") != null) cli.setLocalizacao(rs.getString("Localizacao"));
+                if (rs.getString("localizacao") != null) cli.setLocalizacao(rs.getString("localizacao"));
                 //
-                if (rs.getString("Numero de Atelas") != null) cli.setN_atletas(rs.getString("Numero de Atelas"));
+                if (rs.getString("n_atletas") != null) cli.setN_atletas(rs.getString("n_atletas"));
 
                 lista.add(cli);
             }

@@ -13,9 +13,17 @@ public class Util {
         if (conn != null) {
             return conn;
         } else {
+
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Oops! Can't find class org.postgresql.Driver");
+                System.exit(-1);
+            }
+
             try {
                 conn = DriverManager.getConnection(
-                        "jdbc:postgresql:127.0.0.1:63572/browser/", "", "1");
+                        "jdbc:postgresql://localhost:5432/P2", "postgres", "1");
             } catch (Exception e) {
                 System.out.println("ERRO " + e.getMessage());
                 System.exit(-2);
