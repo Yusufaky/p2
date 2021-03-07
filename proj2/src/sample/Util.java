@@ -23,7 +23,7 @@ public class Util {
 
             try {
                 conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/P2", "postgres", "1");
+                        "jdbc:postgresql://localhost:5432/P2", "postgres", "p22021");
             } catch (Exception e) {
                 System.out.println("ERRO " + e.getMessage());
                 System.exit(-2);
