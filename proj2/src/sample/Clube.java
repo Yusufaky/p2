@@ -135,7 +135,7 @@ public class Clube {
     public static List<Clube> readAll(String nome) {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT id_clube, nome, localizacao, n_atletas FROM clube WHERE nome LIKE ?";
+        String sqlCommand = "SELECT id_clube, nome, localizacao, n_atletas FROM clube WHERE NOME LIKE ?";
 
         List<Clube> lista = new ArrayList<>();
 
