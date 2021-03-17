@@ -85,8 +85,8 @@ false Africa/Timbuktu
 false Africa/Tripoli
 false Africa/Tunis
 false Africa/Windhoek
-false America/Adak
-false America/Anchorage
+true America/Adak
+true America/Anchorage
 false America/Anguilla
 false America/Antigua
 false America/Araguaina
@@ -106,7 +106,7 @@ false America/Argentina/Ushuaia
 false America/Aruba
 true America/Asuncion
 false America/Atikokan
-false America/Atka
+true America/Atka
 false America/Bahia
 false America/Bahia_Banderas
 false America/Barbados
@@ -115,16 +115,16 @@ false America/Belize
 false America/Blanc-Sablon
 false America/Boa_Vista
 false America/Bogota
-false America/Boise
+true America/Boise
 false America/Buenos_Aires
-false America/Cambridge_Bay
+true America/Cambridge_Bay
 false America/Campo_Grande
 false America/Cancun
 false America/Caracas
 false America/Catamarca
 false America/Cayenne
 false America/Cayman
-false America/Chicago
+true America/Chicago
 false America/Chihuahua
 false America/Coral_Harbour
 false America/Cordoba
@@ -135,123 +135,123 @@ false America/Curacao
 false America/Danmarkshavn
 false America/Dawson
 false America/Dawson_Creek
-false America/Denver
-false America/Detroit
+true America/Denver
+true America/Detroit
 false America/Dominica
-false America/Edmonton
+true America/Edmonton
 false America/Eirunepe
 false America/El_Salvador
-false America/Ensenada
+true America/Ensenada
 false America/Fort_Nelson
-false America/Fort_Wayne
+true America/Fort_Wayne
 false America/Fortaleza
-false America/Glace_Bay
+true America/Glace_Bay
 false America/Godthab
-false America/Goose_Bay
-false America/Grand_Turk
+true America/Goose_Bay
+true America/Grand_Turk
 false America/Grenada
 false America/Guadeloupe
 false America/Guatemala
 false America/Guayaquil
 false America/Guyana
-false America/Halifax
-false America/Havana
+true America/Halifax
+true America/Havana
 false America/Hermosillo
-false America/Indiana/Indianapolis
-false America/Indiana/Knox
-false America/Indiana/Marengo
-false America/Indiana/Petersburg
-false America/Indiana/Tell_City
-false America/Indiana/Vevay
-false America/Indiana/Vincennes
-false America/Indiana/Winamac
-false America/Indianapolis
-false America/Inuvik
-false America/Iqaluit
+true America/Indiana/Indianapolis
+true America/Indiana/Knox
+true America/Indiana/Marengo
+true America/Indiana/Petersburg
+true America/Indiana/Tell_City
+true America/Indiana/Vevay
+true America/Indiana/Vincennes
+true America/Indiana/Winamac
+true America/Indianapolis
+true America/Inuvik
+true America/Iqaluit
 false America/Jamaica
 false America/Jujuy
-false America/Juneau
-false America/Kentucky/Louisville
-false America/Kentucky/Monticello
-false America/Knox_IN
+true America/Juneau
+true America/Kentucky/Louisville
+true America/Kentucky/Monticello
+true America/Knox_IN
 false America/Kralendijk
 false America/La_Paz
 false America/Lima
-false America/Los_Angeles
-false America/Louisville
+true America/Los_Angeles
+true America/Louisville
 false America/Lower_Princes
 false America/Maceio
 false America/Managua
 false America/Manaus
 false America/Marigot
 false America/Martinique
-false America/Matamoros
+true America/Matamoros
 false America/Mazatlan
 false America/Mendoza
-false America/Menominee
+true America/Menominee
 false America/Merida
-false America/Metlakatla
+true America/Metlakatla
 false America/Mexico_City
-false America/Miquelon
-false America/Moncton
+true America/Miquelon
+true America/Moncton
 false America/Monterrey
 false America/Montevideo
-false America/Montreal
+true America/Montreal
 false America/Montserrat
-false America/Nassau
-false America/New_York
-false America/Nipigon
-false America/Nome
+true America/Nassau
+true America/New_York
+true America/Nipigon
+true America/Nome
 false America/Noronha
-false America/North_Dakota/Beulah
-false America/North_Dakota/Center
-false America/North_Dakota/New_Salem
+true America/North_Dakota/Beulah
+true America/North_Dakota/Center
+true America/North_Dakota/New_Salem
 false America/Nuuk
-false America/Ojinaga
+true America/Ojinaga
 false America/Panama
-false America/Pangnirtung
+true America/Pangnirtung
 false America/Paramaribo
 false America/Phoenix
-false America/Port-au-Prince
+true America/Port-au-Prince
 false America/Port_of_Spain
 false America/Porto_Acre
 false America/Porto_Velho
 false America/Puerto_Rico
 false America/Punta_Arenas
-false America/Rainy_River
-false America/Rankin_Inlet
+true America/Rainy_River
+true America/Rankin_Inlet
 false America/Recife
 false America/Regina
-false America/Resolute
+true America/Resolute
 false America/Rio_Branco
 false America/Rosario
-false America/Santa_Isabel
+true America/Santa_Isabel
 false America/Santarem
 true America/Santiago
 false America/Santo_Domingo
 false America/Sao_Paulo
 false America/Scoresbysund
-false America/Shiprock
-false America/Sitka
+true America/Shiprock
+true America/Sitka
 false America/St_Barthelemy
-false America/St_Johns
+true America/St_Johns
 false America/St_Kitts
 false America/St_Lucia
 false America/St_Thomas
 false America/St_Vincent
 false America/Swift_Current
 false America/Tegucigalpa
-false America/Thule
-false America/Thunder_Bay
-false America/Tijuana
-false America/Toronto
+true America/Thule
+true America/Thunder_Bay
+true America/Tijuana
+true America/Toronto
 false America/Tortola
-false America/Vancouver
+true America/Vancouver
 false America/Virgin
 false America/Whitehorse
-false America/Winnipeg
-false America/Yakutat
-false America/Yellowknife
+true America/Winnipeg
+true America/Yakutat
+true America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
 false Antarctica/DumontDUrville
@@ -365,7 +365,7 @@ false Asia/Yangon
 false Asia/Yekaterinburg
 false Asia/Yerevan
 false Atlantic/Azores
-false Atlantic/Bermuda
+true Atlantic/Bermuda
 false Atlantic/Canary
 false Atlantic/Cape_Verde
 false Atlantic/Faeroe
@@ -428,19 +428,19 @@ true CLST
 true CLT
 false COT
 false CST
-false CST6CDT
+true CST6CDT
 false CXT
-false Canada/Atlantic
-false Canada/Central
-false Canada/Eastern
-false Canada/Mountain
-false Canada/Newfoundland
-false Canada/Pacific
+true Canada/Atlantic
+true Canada/Central
+true Canada/Eastern
+true Canada/Mountain
+true Canada/Newfoundland
+true Canada/Pacific
 false Canada/Saskatchewan
 false Canada/Yukon
 true Chile/Continental
 true Chile/EasterIsland
-false Cuba
+true Cuba
 false DAVT
 false DDUT
 true EASST
@@ -453,7 +453,7 @@ true EETDST
 true EGST
 false EGT
 false EST
-false EST5EDT
+true EST5EDT
 false Egypt
 true Eire
 false Etc/GMT
@@ -634,12 +634,12 @@ false MPT
 true MSD
 false MSK
 false MST
-false MST7MDT
+true MST7MDT
 true MUST
 false MUT
 false MVT
 false MYT
-false Mexico/BajaNorte
+true Mexico/BajaNorte
 false Mexico/BajaSur
 false Mexico/General
 true NDT
@@ -654,7 +654,7 @@ true NZ-CHAT
 true NZDT
 false NZST
 false NZT
-false Navajo
+true Navajo
 false OMSST
 false OMST
 true PDT
@@ -671,7 +671,7 @@ false PMST
 false PONT
 false PRC
 false PST
-false PST8PDT
+true PST8PDT
 false PWT
 true PYST
 true PYT
@@ -740,17 +740,17 @@ false Turkey
 false UCT
 true ULAST
 false ULAT
-false US/Alaska
-false US/Aleutian
+true US/Alaska
+true US/Aleutian
 false US/Arizona
-false US/Central
-false US/East-Indiana
-false US/Eastern
+true US/Central
+true US/East-Indiana
+true US/Eastern
 false US/Hawaii
-false US/Indiana-Starke
-false US/Michigan
-false US/Mountain
-false US/Pacific
+true US/Indiana-Starke
+true US/Michigan
+true US/Mountain
+true US/Pacific
 false US/Samoa
 false UT
 false UTC
@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1614701576</StartupTime>
+      <StartupTime>1615632078</StartupTime>
     </root>
     <database id="2" parent="1" name="P2">
-      <ObjectId>16394</ObjectId>
+      <ObjectId>17007</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>489</IntrospectionStateNumber>
+      <IntrospectionStateNumber>535</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -865,7 +865,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>490</IntrospectionStateNumber>
+      <IntrospectionStateNumber>536</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -966,96 +966,117 @@ UC/10
       <Type>index</Type>
     </access-method>
     <table id="30" parent="17" name="atleta">
-      <ObjectId>16420</ObjectId>
+      <ObjectId>17088</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <table id="31" parent="17" name="barco">
-      <ObjectId>16400</ObjectId>
+      <ObjectId>17018</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <table id="32" parent="17" name="catbarco">
-      <ObjectId>16395</ObjectId>
+      <ObjectId>17008</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <table id="33" parent="17" name="catprova">
-      <ObjectId>16435</ObjectId>
+      <ObjectId>17033</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <table id="34" parent="17" name="clube">
-      <ObjectId>16415</ObjectId>
+      <ObjectId>17078</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <table id="35" parent="17" name="escalao">
-      <ObjectId>16410</ObjectId>
+      <ObjectId>17028</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
-    <table id="36" parent="17" name="prova">
-      <ObjectId>16440</ObjectId>
+    <table id="36" parent="17" name="federacao">
+      <ObjectId>17058</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
-    <table id="37" parent="17" name="prova_atleta_barco">
-      <ObjectId>16460</ObjectId>
+    <table id="37" parent="17" name="prova">
+      <ObjectId>17038</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
-    <table id="38" parent="17" name="resultado">
-      <ObjectId>16450</ObjectId>
+    <table id="38" parent="17" name="prova_atleta_barco">
+      <ObjectId>17108</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
-    <column id="39" parent="30" name="id_atleta">
+    <table id="39" parent="17" name="resultado">
+      <ObjectId>17048</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>526</StateNumber>
+    </table>
+    <table id="40" parent="17" name="tipoutilizador">
+      <ObjectId>17013</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>526</StateNumber>
+    </table>
+    <table id="41" parent="17" name="utilizador">
+      <ObjectId>17068</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>526</StateNumber>
+    </table>
+    <column id="42" parent="30" name="id_atleta">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="40" parent="30" name="nome">
+    <column id="43" parent="30" name="nome">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="30" name="idade">
+    <column id="44" parent="30" name="idade">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="42" parent="30" name="localizacao">
+    <column id="45" parent="30" name="localizacao">
       <Position>4</Position>
       <DataType>varchar(200)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="30" name="sexo">
+    <column id="46" parent="30" name="sexo">
       <Position>5</Position>
       <DataType>varchar(2)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="44" parent="30" name="id_clube">
+    <column id="47" parent="30" name="id_clube">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="30" name="id_escalao">
+    <column id="48" parent="30" name="id_escalao">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="46" parent="30" name="atleta_pkey">
-      <ObjectId>16423</ObjectId>
-      <StateNumber>488</StateNumber>
+    <column id="49" parent="30" name="id_utilizador">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="50" parent="30" name="atleta_pkey">
+      <ObjectId>17091</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_atleta</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1063,49 +1084,59 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="47" parent="30" name="atleta_pkey">
-      <ObjectId>16424</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="51" parent="30" name="atleta_pkey">
+      <ObjectId>17092</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_atleta</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>atleta_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="48" parent="30" name="fk_clube">
-      <ObjectId>16425</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="52" parent="30" name="fk_clube">
+      <ObjectId>17093</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_clube</ColNames>
-      <RefTableId>16415</RefTableId>
+      <RefTableId>17078</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>clube</RefTableName>
       <RefKeyName>clube_pkey</RefKeyName>
       <RefColNames>id_clube</RefColNames>
     </foreign-key>
-    <foreign-key id="49" parent="30" name="fk_escalao">
-      <ObjectId>16430</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="53" parent="30" name="fk_escalao">
+      <ObjectId>17098</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_escalao</ColNames>
-      <RefTableId>16410</RefTableId>
+      <RefTableId>17028</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>escalao</RefTableName>
       <RefKeyName>escalao_pkey</RefKeyName>
       <RefColNames>id_escalao</RefColNames>
     </foreign-key>
-    <column id="50" parent="31" name="id_barco">
+    <foreign-key id="54" parent="30" name="fk_utilizador">
+      <ObjectId>17103</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_utilizador</ColNames>
+      <RefTableId>17068</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>utilizador</RefTableName>
+      <RefKeyName>utilizador_pkey</RefKeyName>
+      <RefColNames>id_utilizador</RefColNames>
+    </foreign-key>
+    <column id="55" parent="31" name="id_barco">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="51" parent="31" name="id_catbarco">
+    <column id="56" parent="31" name="id_catbarco">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="52" parent="31" name="barco_pkey">
-      <ObjectId>16403</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="57" parent="31" name="barco_pkey">
+      <ObjectId>17021</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_barco</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1113,39 +1144,39 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="53" parent="31" name="barco_pkey">
-      <ObjectId>16404</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="58" parent="31" name="barco_pkey">
+      <ObjectId>17022</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_barco</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>barco_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="54" parent="31" name="fk_catbarco">
-      <ObjectId>16405</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="59" parent="31" name="fk_catbarco">
+      <ObjectId>17023</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catbarco</ColNames>
-      <RefTableId>16395</RefTableId>
+      <RefTableId>17008</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>catbarco</RefTableName>
       <RefKeyName>catbarco_pkey</RefKeyName>
       <RefColNames>id_catbarco</RefColNames>
     </foreign-key>
-    <column id="55" parent="32" name="id_catbarco">
+    <column id="60" parent="32" name="id_catbarco">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="56" parent="32" name="nome">
+    <column id="61" parent="32" name="nome">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="57" parent="32" name="catbarco_pkey">
-      <ObjectId>16398</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="62" parent="32" name="catbarco_pkey">
+      <ObjectId>17011</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catbarco</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1153,47 +1184,47 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="58" parent="32" name="catbarco_pkey">
-      <ObjectId>16399</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="63" parent="32" name="catbarco_pkey">
+      <ObjectId>17012</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catbarco</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>catbarco_pkey</UnderlyingIndexName>
     </key>
-    <column id="59" parent="33" name="id_catprova">
+    <column id="64" parent="33" name="id_catprova">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="60" parent="33" name="distancia">
+    <column id="65" parent="33" name="distancia">
       <Position>2</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>533</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="61" parent="33" name="localizacao">
+    <column id="66" parent="33" name="localizacao">
       <Position>3</Position>
       <DataType>varchar(200)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="62" parent="33" name="pista">
+    <column id="67" parent="33" name="pista">
       <Position>4</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>534</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="63" parent="33" name="hora">
+    <column id="68" parent="33" name="hora">
       <Position>5</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="64" parent="33" name="catprova_pkey">
-      <ObjectId>16438</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="69" parent="33" name="catprova_pkey">
+      <ObjectId>17036</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catprova</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1201,41 +1232,47 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="65" parent="33" name="catprova_pkey">
-      <ObjectId>16439</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="70" parent="33" name="catprova_pkey">
+      <ObjectId>17037</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catprova</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>catprova_pkey</UnderlyingIndexName>
     </key>
-    <column id="66" parent="34" name="id_clube">
+    <column id="71" parent="34" name="id_clube">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="67" parent="34" name="nome">
+    <column id="72" parent="34" name="nome">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="68" parent="34" name="localizacao">
+    <column id="73" parent="34" name="localizacao">
       <Position>3</Position>
       <DataType>varchar(200)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="69" parent="34" name="n_atletas">
+    <column id="74" parent="34" name="n_atletas">
       <Position>4</Position>
       <DataType>varchar(200)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="70" parent="34" name="clube_pkey">
-      <ObjectId>16418</ObjectId>
-      <StateNumber>488</StateNumber>
+    <column id="75" parent="34" name="id_utilizador">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="76" parent="34" name="clube_pkey">
+      <ObjectId>17081</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_clube</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1243,29 +1280,39 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="71" parent="34" name="clube_pkey">
-      <ObjectId>16419</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="77" parent="34" name="clube_pkey">
+      <ObjectId>17082</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_clube</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>clube_pkey</UnderlyingIndexName>
     </key>
-    <column id="72" parent="35" name="id_escalao">
+    <foreign-key id="78" parent="34" name="fk_utilizador">
+      <ObjectId>17083</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_utilizador</ColNames>
+      <RefTableId>17068</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>utilizador</RefTableName>
+      <RefKeyName>utilizador_pkey</RefKeyName>
+      <RefColNames>id_utilizador</RefColNames>
+    </foreign-key>
+    <column id="79" parent="35" name="id_escalao">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="73" parent="35" name="escalao">
+    <column id="80" parent="35" name="escalao">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="74" parent="35" name="escalao_pkey">
-      <ObjectId>16413</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="81" parent="35" name="escalao_pkey">
+      <ObjectId>17031</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_escalao</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1273,29 +1320,81 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="75" parent="35" name="escalao_pkey">
-      <ObjectId>16414</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="82" parent="35" name="escalao_pkey">
+      <ObjectId>17032</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_escalao</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>escalao_pkey</UnderlyingIndexName>
     </key>
-    <column id="76" parent="36" name="id_prova">
+    <column id="83" parent="36" name="id_federacao">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="77" parent="36" name="id_catprova">
+    <column id="84" parent="36" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="85" parent="36" name="pais">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="86" parent="36" name="id_prova">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="87" parent="36" name="federacao_pkey">
+      <ObjectId>17061</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_federacao</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="88" parent="36" name="federacao_pkey">
+      <ObjectId>17062</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_federacao</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>federacao_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="89" parent="36" name="fk_prova">
+      <ObjectId>17063</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_prova</ColNames>
+      <RefTableId>17038</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>prova</RefTableName>
+      <RefKeyName>prova_pkey</RefKeyName>
+      <RefColNames>id_prova</RefColNames>
+    </foreign-key>
+    <column id="90" parent="37" name="id_prova">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="91" parent="37" name="id_catprova">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="78" parent="36" name="prova_pkey">
-      <ObjectId>16443</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="92" parent="37" name="prova_pkey">
+      <ObjectId>17041</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_prova</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1303,47 +1402,47 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="79" parent="36" name="prova_pkey">
-      <ObjectId>16444</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="93" parent="37" name="prova_pkey">
+      <ObjectId>17042</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_prova</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>prova_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="80" parent="36" name="fk_catprova">
-      <ObjectId>16445</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="94" parent="37" name="fk_catprova">
+      <ObjectId>17043</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_catprova</ColNames>
-      <RefTableId>16435</RefTableId>
+      <RefTableId>17033</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>catprova</RefTableName>
       <RefKeyName>catprova_pkey</RefKeyName>
       <RefColNames>id_catprova</RefColNames>
     </foreign-key>
-    <column id="81" parent="37" name="id_atleta">
+    <column id="95" parent="38" name="id_atleta">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="82" parent="37" name="id_prova">
+    <column id="96" parent="38" name="id_prova">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="83" parent="37" name="id_barco">
+    <column id="97" parent="38" name="id_barco">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="84" parent="37" name="prova_atleta_barco_pkey">
-      <ObjectId>16463</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="98" parent="38" name="prova_atleta_barco_pkey">
+      <ObjectId>17111</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_atleta
 id_prova
 id_barco</ColNames>
@@ -1353,67 +1452,67 @@ id_barco</ColNames>
       <CollationIds>0,0,0</CollationIds>
       <ClassIds>1978,1978,1978</ClassIds>
     </index>
-    <key id="85" parent="37" name="prova_atleta_barco_pkey">
-      <ObjectId>16464</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="99" parent="38" name="prova_atleta_barco_pkey">
+      <ObjectId>17112</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_atleta
 id_prova
 id_barco</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>prova_atleta_barco_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="86" parent="37" name="fk_atleta_prova_barco">
-      <ObjectId>16465</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="100" parent="38" name="fk_atleta_prova_barco">
+      <ObjectId>17113</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_atleta</ColNames>
-      <RefTableId>16420</RefTableId>
+      <RefTableId>17088</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>atleta</RefTableName>
       <RefKeyName>atleta_pkey</RefKeyName>
       <RefColNames>id_atleta</RefColNames>
     </foreign-key>
-    <foreign-key id="87" parent="37" name="fk_prova_atleta_barco">
-      <ObjectId>16470</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="101" parent="38" name="fk_prova_atleta_barco">
+      <ObjectId>17118</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_prova</ColNames>
-      <RefTableId>16440</RefTableId>
+      <RefTableId>17038</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>prova</RefTableName>
       <RefKeyName>prova_pkey</RefKeyName>
       <RefColNames>id_prova</RefColNames>
     </foreign-key>
-    <foreign-key id="88" parent="37" name="fk_barco_atleta_prova">
-      <ObjectId>16475</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="102" parent="38" name="fk_barco_atleta_prova">
+      <ObjectId>17123</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_barco</ColNames>
-      <RefTableId>16400</RefTableId>
+      <RefTableId>17018</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>barco</RefTableName>
       <RefKeyName>barco_pkey</RefKeyName>
       <RefColNames>id_barco</RefColNames>
     </foreign-key>
-    <column id="89" parent="38" name="id_resultado">
+    <column id="103" parent="39" name="id_resultado">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="90" parent="38" name="classificacao">
+    <column id="104" parent="39" name="classificacao">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="91" parent="38" name="id_prova">
+    <column id="105" parent="39" name="id_prova">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>488</StateNumber>
+      <StateNumber>526</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="92" parent="38" name="resultado_pkey">
-      <ObjectId>16453</ObjectId>
-      <StateNumber>488</StateNumber>
+    <index id="106" parent="39" name="resultado_pkey">
+      <ObjectId>17051</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_resultado</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1421,22 +1520,104 @@ id_barco</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="93" parent="38" name="resultado_pkey">
-      <ObjectId>16454</ObjectId>
-      <StateNumber>488</StateNumber>
+    <key id="107" parent="39" name="resultado_pkey">
+      <ObjectId>17052</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_resultado</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>resultado_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="94" parent="38" name="fk_prova">
-      <ObjectId>16455</ObjectId>
-      <StateNumber>488</StateNumber>
+    <foreign-key id="108" parent="39" name="fk_prova">
+      <ObjectId>17053</ObjectId>
+      <StateNumber>526</StateNumber>
       <ColNames>id_prova</ColNames>
-      <RefTableId>16440</RefTableId>
+      <RefTableId>17038</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>prova</RefTableName>
       <RefKeyName>prova_pkey</RefKeyName>
       <RefColNames>id_prova</RefColNames>
+    </foreign-key>
+    <column id="109" parent="40" name="id_tipoutilizador">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="110" parent="40" name="tipo">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="111" parent="40" name="tipoutilizador_pkey">
+      <ObjectId>17016</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_tipoutilizador</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="112" parent="40" name="tipoutilizador_pkey">
+      <ObjectId>17017</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_tipoutilizador</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>tipoutilizador_pkey</UnderlyingIndexName>
+    </key>
+    <column id="113" parent="41" name="id_utilizador">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="114" parent="41" name="username">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="115" parent="41" name="pass">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="116" parent="41" name="id_tipoutilizador">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="117" parent="41" name="utilizador_pkey">
+      <ObjectId>17071</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_utilizador</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="118" parent="41" name="utilizador_pkey">
+      <ObjectId>17072</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_utilizador</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>utilizador_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="119" parent="41" name="fk_tipoutilizador">
+      <ObjectId>17073</ObjectId>
+      <StateNumber>526</StateNumber>
+      <ColNames>id_tipoutilizador</ColNames>
+      <RefTableId>17013</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>tipoutilizador</RefTableName>
+      <RefKeyName>tipoutilizador_pkey</RefKeyName>
+      <RefColNames>id_tipoutilizador</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

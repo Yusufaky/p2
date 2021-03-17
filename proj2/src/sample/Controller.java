@@ -3,12 +3,26 @@ package sample;
 import javax.swing.*;
 import javafx.event.ActionEvent;
 
+import java.util.List;
+
 public class Controller {
-    public  void pressButton(ActionEvent event){
-        System.out.println("Olá Mundo");
+
+
+    public  void btnVerClube(ActionEvent event){
+
+        List<Clube> listaDeClientes = Clube.readAll("");
+
+        for(Clube cl : listaDeClientes)
+            System.out.println("||ID: " + cl.getId_clube() + " ||Clube : " + cl.getNome() + " ||Localização: " + cl.getLocalizacao()+ " ||Numero de Atletas: " + cl.getN_atletas());
+
+        System.out.println("----------------------------------------------------------------------------------------");
     }
-    public  void pressButton2(ActionEvent event){
-        System.out.println("Olá Mundo");
+    public  void btnCatBarco(ActionEvent event){
+        List<CategoriaBarco> listaDeClientes = CategoriaBarco.readAll("");
+        for(CategoriaBarco categoriaBarco : listaDeClientes)
+            System.out.println("||ID: " + categoriaBarco.getId_categoriaBarco() + " ||Nome do Barco : " + categoriaBarco.getNome());
+
+        System.out.println("----------------------------------------------------------------------------------------");
     }
 
 }
