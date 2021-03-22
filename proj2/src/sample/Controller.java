@@ -24,6 +24,18 @@ public class Controller {
 
         System.out.println("----------------------------------------------------------------------------------------");
     }
+    public  void btnVerProvas(ActionEvent event){
 
+        System.out.println("---------------------------------Ver Provas-------------------------------------------------------");
+    }
+    public  void btnInscreverClube(ActionEvent event){
+        System.out.println("---------------------------------Inscrever Clube-------------------------------------------------------");
+    }
+    public  void btnCriarProva(ActionEvent event){
+        System.out.println("---------------------------------Criar Prova-------------------------------------------------------");
+    }
+    public  void btnInscreverAtleta(ActionEvent event){
+        System.out.println("---------------------------------Inscrever Atleta-------------------------------------------------------");
+    }
 }
 

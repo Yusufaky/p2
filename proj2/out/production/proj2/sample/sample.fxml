@@ -10,21 +10,45 @@
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
          <children>
-            <Button fx:id="btn_msg1" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnCatBarco" prefHeight="75.0" prefWidth="118.0" text="Ver Categoria de Barcos" />
+            <Button fx:id="btn_msg1" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnCatBarco" prefHeight="75.0" prefWidth="118.0" text="Listar Resultados" />
          </children>
       </Pane>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="btn_msg11" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnVerClube" prefHeight="75.0" prefWidth="118.0" text="Ver Clube" />
+            <Button fx:id="btn_msg2" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnVerClube" prefHeight="75.0" prefWidth="118.0" text="Listar Clubes" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="btn_msg3" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnVerProvas" prefHeight="75.0" prefWidth="118.0" text="Listar Provas" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="btn_msg4" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnInscreverClube" prefHeight="75.0" prefWidth="118.0" text="Inscrever Clubes" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+         <children>
+            <Button fx:id="btn_msg5" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnCriarProva" prefHeight="75.0" prefWidth="118.0" text="Criar Provas" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="btn_msg6" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnInscreverAtleta" prefHeight="75.0" prefWidth="118.0" text="Inscrever Atletas" />
          </children>
       </Pane>
    </children>

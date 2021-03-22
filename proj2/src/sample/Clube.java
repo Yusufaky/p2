@@ -14,6 +14,7 @@ public class Clube {
     private String localizacao;
     private String n_atletas;
 
+
     Clube() {
     }
 
@@ -49,6 +50,7 @@ public class Clube {
     public void setN_atletas(String n_atletas) {
         this.n_atletas = n_atletas;
     }
+
 
     //GOOD
     public void create() {

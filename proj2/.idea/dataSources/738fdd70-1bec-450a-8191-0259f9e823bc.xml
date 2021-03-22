@@ -347,7 +347,7 @@ false Asia/Srednekolymsk
 false Asia/Taipei
 false Asia/Tashkent
 false Asia/Tbilisi
-false Asia/Tehran
+true Asia/Tehran
 false Asia/Tel_Aviv
 false Asia/Thimbu
 false Asia/Thimphu
@@ -598,7 +598,7 @@ false Indian/Maldives
 false Indian/Mauritius
 false Indian/Mayotte
 false Indian/Reunion
-false Iran
+true Iran
 false Israel
 false JAYT
 false JST
@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1615632078</StartupTime>
+      <StartupTime>1616404012</StartupTime>
     </root>
     <database id="2" parent="1" name="P2">
       <ObjectId>17007</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>535</IntrospectionStateNumber>
+      <IntrospectionStateNumber>538</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -865,7 +865,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>536</IntrospectionStateNumber>
+      <IntrospectionStateNumber>539</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
