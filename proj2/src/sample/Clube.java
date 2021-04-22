@@ -78,7 +78,7 @@ public class Clube {
         String sqlCommand = "SELECT nome, localizacao, n_atletas FROM clube WHERE id_clube = ?";
 
         try {
-            PreparedStatement st = conn.prepareStatement(sqlCommand);
+                PreparedStatement st = conn.prepareStatement(sqlCommand);
             st.setInt(1, id_clube);
 
 

@@ -13,7 +13,7 @@ public class Controller {
         List<Clube> listaDeClientes = Clube.readAll("");
 
         for(Clube cl : listaDeClientes)
-            System.out.println("||ID: " + cl.getId_clube() + " ||Clube : " + cl.getNome() + " ||Localização: " + cl.getLocalizacao()+ " ||Numero de Atletas: " + cl.getN_atletas());
+            System.out.println("||ID: " + cl.   getId_clube() + " ||Clube : " + cl.getNome() + " ||Localização: " + cl.getLocalizacao()+ " ||Numero de Atletas: " + cl.getN_atletas());
 
         System.out.println("----------------------------------------------------------------------------------------");
     }

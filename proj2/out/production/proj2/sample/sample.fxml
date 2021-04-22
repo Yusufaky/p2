@@ -23,7 +23,7 @@
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
          <children>
-            <Button fx:id="btn_msg1" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnCatBarco" prefHeight="75.0" prefWidth="118.0" text="Listar Resultados" />
+            <Button fx:id="btn_msg1" layoutX="41.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnCatBarco" prefHeight="75.0" prefWidth="118.0" text="Listar CatBarco" />
          </children>
       </Pane>
       <Pane prefHeight="200.0" prefWidth="200.0">
