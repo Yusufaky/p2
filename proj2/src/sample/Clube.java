@@ -110,10 +110,7 @@ public class Clube {
 
         try {
             PreparedStatement st = conn.prepareStatement(sqlCommand);
-
-
             ResultSet rs = st.executeQuery();
-
             while (rs.next()) {
                 Clube cli = new Clube();
 

@@ -6,9 +6,11 @@ package sample;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author Marcos
@@ -18,6 +20,25 @@ public class FederacaoAcoes extends JFrame {
         initComponents();
     }
 
+    private void PopulateTableAnswer() {
+        List<Resultados> allDados = Resultados.readAll();
+
+
+        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Name", "ID Prova", "ID Atleta"}, 0);
+        //Adiciona os medicamentos na tablela
+        try {
+
+            for (Resultados data : allDados) {
+                System.out.println(data.getClassificacao());
+                model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getId_atleta()});
+            }
+
+            tbAddResultado.setModel(model_d);
+        } catch (
+                IndexOutOfBoundsException error) {
+            System.out.println("Sem Resultados..");
+        }
+    }
 
     private void btnCriarProvaPainel(ActionEvent e) {
         panel2.removeAll();
@@ -31,13 +52,14 @@ public class FederacaoAcoes extends JFrame {
         panel2.add(panelListarResultados);
         panel2.repaint();
         panel2.revalidate();
+        PopulateTableAnswer();
     }
 
     private void btnLoginPainel(ActionEvent e) {
-       btnAddResultadoPAG.setVisible(true);
-       btnCriarProvaPAG.setVisible(true);
-       btnListarResultadosPAG.setVisible(true);
-       btnLogOutPAG.setVisible(true);
+        btnAddResultadoPAG.setVisible(true);
+        btnCriarProvaPAG.setVisible(true);
+        btnListarResultadosPAG.setVisible(true);
+        btnLogOutPAG.setVisible(true);
         panel2.removeAll();
         panel2.add(panelCriarProva);
         panel2.repaint();
@@ -54,7 +76,7 @@ public class FederacaoAcoes extends JFrame {
         panel2.add(panelLogin);
         panel2.repaint();
         panel2.revalidate();
-        
+
     }
 
     private void btnAddResultadoPAGAction(ActionEvent e) {
@@ -116,11 +138,17 @@ public class FederacaoAcoes extends JFrame {
         //======== panelFederacao ========
         {
             panelFederacao.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
-            border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER
-            ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font
-            .BOLD,12),java.awt.Color.red),panelFederacao. getBorder()));panelFederacao. addPropertyChangeListener(
-            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062ord\u0065r"
-            .equals(e.getPropertyName()))throw new RuntimeException();}});
+                    border.EmptyBorder(0, 0, 0, 0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax.swing.border.TitledBorder.CENTER
+                    , javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dia\u006cog", java.awt.Font
+                    .BOLD, 12), java.awt.Color.red), panelFederacao.getBorder()));
+            panelFederacao.addPropertyChangeListener(
+                    new java.beans.PropertyChangeListener() {
+                        @Override
+                        public void propertyChange(java.beans.PropertyChangeEvent e) {
+                            if ("\u0062ord\u0065r"
+                                    .equals(e.getPropertyName())) throw new RuntimeException();
+                        }
+                    });
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -176,51 +204,51 @@ public class FederacaoAcoes extends JFrame {
                     btnLogin.setText("Login");
                     btnLogin.addActionListener(e -> {
 
-			btnLoginPainel(e);
-		});
+                        btnLoginPainel(e);
+                    });
 
                     GroupLayout panelLoginLayout = new GroupLayout(panelLogin);
                     panelLogin.setLayout(panelLoginLayout);
                     panelLoginLayout.setHorizontalGroup(
-                        panelLoginLayout.createParallelGroup()
-                            .addGroup(panelLoginLayout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addGroup(panelLoginLayout.createParallelGroup()
+                            panelLoginLayout.createParallelGroup()
                                     .addGroup(panelLoginLayout.createSequentialGroup()
-                                        .addGap(226, 226, 226)
-                                        .addComponent(lbUserName2, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panelLoginLayout.createSequentialGroup()
-                                        .addComponent(lbUserName)
-                                        .addGap(135, 135, 135)
-                                        .addComponent(textUserName, GroupLayout.PREFERRED_SIZE, 244, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panelLoginLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(lbPassWord)
-                                        .addGap(135, 135, 135)
-                                        .addComponent(textPassword, GroupLayout.PREFERRED_SIZE, 244, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panelLoginLayout.createSequentialGroup()
-                                        .addGap(226, 226, 226)
-                                        .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(148, Short.MAX_VALUE))
+                                            .addGap(145, 145, 145)
+                                            .addGroup(panelLoginLayout.createParallelGroup()
+                                                    .addGroup(panelLoginLayout.createSequentialGroup()
+                                                            .addGap(226, 226, 226)
+                                                            .addComponent(lbUserName2, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(panelLoginLayout.createSequentialGroup()
+                                                            .addComponent(lbUserName)
+                                                            .addGap(135, 135, 135)
+                                                            .addComponent(textUserName, GroupLayout.PREFERRED_SIZE, 244, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(panelLoginLayout.createSequentialGroup()
+                                                            .addGap(4, 4, 4)
+                                                            .addComponent(lbPassWord)
+                                                            .addGap(135, 135, 135)
+                                                            .addComponent(textPassword, GroupLayout.PREFERRED_SIZE, 244, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(panelLoginLayout.createSequentialGroup()
+                                                            .addGap(226, 226, 226)
+                                                            .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)))
+                                            .addContainerGap(148, Short.MAX_VALUE))
                     );
                     panelLoginLayout.setVerticalGroup(
-                        panelLoginLayout.createParallelGroup()
-                            .addGroup(panelLoginLayout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(lbUserName2, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addGroup(panelLoginLayout.createParallelGroup()
-                                    .addComponent(lbUserName)
-                                    .addComponent(textUserName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(43, 43, 43)
-                                .addGroup(panelLoginLayout.createParallelGroup()
-                                    .addComponent(lbPassWord)
+                            panelLoginLayout.createParallelGroup()
                                     .addGroup(panelLoginLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(textPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                                .addGap(93, 93, 93)
-                                .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(91, Short.MAX_VALUE))
+                                            .addGap(43, 43, 43)
+                                            .addComponent(lbUserName2, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(60, 60, 60)
+                                            .addGroup(panelLoginLayout.createParallelGroup()
+                                                    .addComponent(lbUserName)
+                                                    .addComponent(textUserName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(43, 43, 43)
+                                            .addGroup(panelLoginLayout.createParallelGroup()
+                                                    .addComponent(lbPassWord)
+                                                    .addGroup(panelLoginLayout.createSequentialGroup()
+                                                            .addGap(3, 3, 3)
+                                                            .addComponent(textPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(93, 93, 93)
+                                            .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                            .addContainerGap(91, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelLogin, "card3");
@@ -251,53 +279,53 @@ public class FederacaoAcoes extends JFrame {
                     GroupLayout panelCriarProvaLayout = new GroupLayout(panelCriarProva);
                     panelCriarProva.setLayout(panelCriarProvaLayout);
                     panelCriarProvaLayout.setHorizontalGroup(
-                        panelCriarProvaLayout.createParallelGroup()
-                            .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                .addGroup(panelCriarProvaLayout.createParallelGroup()
+                            panelCriarProvaLayout.createParallelGroup()
                                     .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                        .addGap(319, 319, 319)
-                                        .addComponent(lbCriarProva))
-                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                        .addGap(103, 103, 103)
-                                        .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                                .addGroup(panelCriarProvaLayout.createParallelGroup()
-                                                    .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(lbCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(lbFederacao))
+                                            .addGroup(panelCriarProvaLayout.createParallelGroup()
                                                     .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                                        .addGap(19, 19, 19)
-                                                        .addComponent(lbCategoria2)))
-                                                .addGap(94, 94, 94)
-                                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(boxCategoria)
-                                                    .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                        .addGap(299, 299, 299)
-                                        .addComponent(btnCriarProva)))
-                                .addContainerGap(253, Short.MAX_VALUE))
+                                                            .addGap(319, 319, 319)
+                                                            .addComponent(lbCriarProva))
+                                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                                            .addGap(103, 103, 103)
+                                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                                    .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+                                                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                                                            .addGroup(panelCriarProvaLayout.createParallelGroup()
+                                                                                    .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                                            .addComponent(lbCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                            .addComponent(lbFederacao))
+                                                                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                                                                            .addGap(19, 19, 19)
+                                                                                            .addComponent(lbCategoria2)))
+                                                                            .addGap(94, 94, 94)
+                                                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                                    .addComponent(boxCategoria)
+                                                                                    .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)))))
+                                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                                            .addGap(299, 299, 299)
+                                                            .addComponent(btnCriarProva)))
+                                            .addContainerGap(253, Short.MAX_VALUE))
                     );
                     panelCriarProvaLayout.setVerticalGroup(
-                        panelCriarProvaLayout.createParallelGroup()
-                            .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbCriarProva, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lbFederacao)
-                                    .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)
-                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lbCategoria)
-                                    .addComponent(boxCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(35, 35, 35)
-                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbCategoria2)
-                                    .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(75, 75, 75)
-                                .addComponent(btnCriarProva)
-                                .addContainerGap(107, Short.MAX_VALUE))
+                            panelCriarProvaLayout.createParallelGroup()
+                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addComponent(lbCriarProva, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(32, 32, 32)
+                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(lbFederacao)
+                                                    .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(32, 32, 32)
+                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(lbCategoria)
+                                                    .addComponent(boxCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(35, 35, 35)
+                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(lbCategoria2)
+                                                    .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(75, 75, 75)
+                                            .addComponent(btnCriarProva)
+                                            .addContainerGap(107, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelCriarProva, "card1");
@@ -328,47 +356,47 @@ public class FederacaoAcoes extends JFrame {
                     GroupLayout paneladdResultadoLayout = new GroupLayout(paneladdResultado);
                     paneladdResultado.setLayout(paneladdResultadoLayout);
                     paneladdResultadoLayout.setHorizontalGroup(
-                        paneladdResultadoLayout.createParallelGroup()
-                            .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
-                                .addContainerGap(252, Short.MAX_VALUE)
-                                .addComponent(lbaddResultado)
-                                .addGap(246, 246, 246))
-                            .addGroup(paneladdResultadoLayout.createSequentialGroup()
-                                .addGap(162, 162, 162)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnResultadoADD)
+                            paneladdResultadoLayout.createParallelGroup()
+                                    .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
+                                            .addContainerGap(252, Short.MAX_VALUE)
+                                            .addComponent(lbaddResultado)
+                                            .addGap(246, 246, 246))
                                     .addGroup(paneladdResultadoLayout.createSequentialGroup()
-                                        .addGroup(paneladdResultadoLayout.createParallelGroup()
-                                            .addComponent(lbProva)
-                                            .addComponent(lbbarco)
-                                            .addComponent(lbTempo))
-                                        .addGap(128, 128, 128)
-                                        .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(boxProva, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(txtTempo, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(boxBarco, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))))
-                                .addContainerGap(222, Short.MAX_VALUE))
+                                            .addGap(162, 162, 162)
+                                            .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(btnResultadoADD)
+                                                    .addGroup(paneladdResultadoLayout.createSequentialGroup()
+                                                            .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                                                    .addComponent(lbProva)
+                                                                    .addComponent(lbbarco)
+                                                                    .addComponent(lbTempo))
+                                                            .addGap(128, 128, 128)
+                                                            .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                    .addComponent(boxProva, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                                                                    .addComponent(txtTempo, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                                                                    .addComponent(boxBarco, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))))
+                                            .addContainerGap(222, Short.MAX_VALUE))
                     );
                     paneladdResultadoLayout.setVerticalGroup(
-                        paneladdResultadoLayout.createParallelGroup()
-                            .addGroup(paneladdResultadoLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(lbaddResultado, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup()
-                                    .addComponent(lbProva)
-                                    .addComponent(boxProva, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lbTempo)
-                                    .addComponent(txtTempo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbbarco)
-                                    .addComponent(boxBarco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                                .addComponent(btnResultadoADD)
-                                .addGap(74, 74, 74))
+                            paneladdResultadoLayout.createParallelGroup()
+                                    .addGroup(paneladdResultadoLayout.createSequentialGroup()
+                                            .addGap(21, 21, 21)
+                                            .addComponent(lbaddResultado, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(60, 60, 60)
+                                            .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                                    .addComponent(lbProva)
+                                                    .addComponent(boxProva, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(21, 21, 21)
+                                            .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(lbTempo)
+                                                    .addComponent(txtTempo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(32, 32, 32)
+                                            .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(lbbarco)
+                                                    .addComponent(boxBarco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                                            .addComponent(btnResultadoADD)
+                                            .addGap(74, 74, 74))
                     );
                 }
                 panel2.add(paneladdResultado, "card2");
@@ -392,35 +420,35 @@ public class FederacaoAcoes extends JFrame {
                     GroupLayout panelListarResultadosLayout = new GroupLayout(panelListarResultados);
                     panelListarResultados.setLayout(panelListarResultadosLayout);
                     panelListarResultadosLayout.setHorizontalGroup(
-                        panelListarResultadosLayout.createParallelGroup()
-                            .addGroup(panelListarResultadosLayout.createSequentialGroup()
-                                .addGroup(panelListarResultadosLayout.createParallelGroup()
+                            panelListarResultadosLayout.createParallelGroup()
                                     .addGroup(panelListarResultadosLayout.createSequentialGroup()
-                                        .addGap(270, 270, 270)
-                                        .addComponent(lbListarResultado))
-                                    .addGroup(panelListarResultadosLayout.createSequentialGroup()
-                                        .addGap(180, 180, 180)
-                                        .addComponent(lbProvaListar)
-                                        .addGap(144, 144, 144)
-                                        .addComponent(boxProvaListar, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(204, Short.MAX_VALUE))
-                            .addGroup(GroupLayout.Alignment.TRAILING, panelListarResultadosLayout.createSequentialGroup()
-                                .addGap(0, 165, Short.MAX_VALUE)
-                                .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))
+                                            .addGroup(panelListarResultadosLayout.createParallelGroup()
+                                                    .addGroup(panelListarResultadosLayout.createSequentialGroup()
+                                                            .addGap(270, 270, 270)
+                                                            .addComponent(lbListarResultado))
+                                                    .addGroup(panelListarResultadosLayout.createSequentialGroup()
+                                                            .addGap(180, 180, 180)
+                                                            .addComponent(lbProvaListar)
+                                                            .addGap(144, 144, 144)
+                                                            .addComponent(boxProvaListar, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)))
+                                            .addContainerGap(204, Short.MAX_VALUE))
+                                    .addGroup(GroupLayout.Alignment.TRAILING, panelListarResultadosLayout.createSequentialGroup()
+                                            .addGap(0, 165, Short.MAX_VALUE)
+                                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(146, 146, 146))
                     );
                     panelListarResultadosLayout.setVerticalGroup(
-                        panelListarResultadosLayout.createParallelGroup()
-                            .addGroup(panelListarResultadosLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(lbListarResultado, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addGroup(panelListarResultadosLayout.createParallelGroup()
-                                    .addComponent(lbProvaListar)
-                                    .addComponent(boxProvaListar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
-                                .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(67, Short.MAX_VALUE))
+                            panelListarResultadosLayout.createParallelGroup()
+                                    .addGroup(panelListarResultadosLayout.createSequentialGroup()
+                                            .addGap(23, 23, 23)
+                                            .addComponent(lbListarResultado, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(33, 33, 33)
+                                            .addGroup(panelListarResultadosLayout.createParallelGroup()
+                                                    .addComponent(lbProvaListar)
+                                                    .addComponent(boxProvaListar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(28, 28, 28)
+                                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)
+                                            .addContainerGap(67, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelListarResultados, "card4");
@@ -429,51 +457,51 @@ public class FederacaoAcoes extends JFrame {
             GroupLayout panelFederacaoLayout = new GroupLayout(panelFederacao);
             panelFederacao.setLayout(panelFederacaoLayout);
             panelFederacaoLayout.setHorizontalGroup(
-                panelFederacaoLayout.createParallelGroup()
-                    .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panelFederacaoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCriarProvaPAG)
-                        .addGroup(panelFederacaoLayout.createParallelGroup()
+                    panelFederacaoLayout.createParallelGroup()
+                            .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(panelFederacaoLayout.createSequentialGroup()
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddResultadoPAG)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnListarResultadosPAG)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnLogOutPAG)
-                                .addGap(16, 16, 16))
-                            .addGroup(panelFederacaoLayout.createSequentialGroup()
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbBemVindo)
-                                .addGap(293, 293, 293))))
+                                    .addContainerGap()
+                                    .addComponent(btnCriarProvaPAG)
+                                    .addGroup(panelFederacaoLayout.createParallelGroup()
+                                            .addGroup(panelFederacaoLayout.createSequentialGroup()
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnAddResultadoPAG)
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnListarResultadosPAG)
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(btnLogOutPAG)
+                                                    .addGap(16, 16, 16))
+                                            .addGroup(panelFederacaoLayout.createSequentialGroup()
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(lbBemVindo)
+                                                    .addGap(293, 293, 293))))
             );
             panelFederacaoLayout.setVerticalGroup(
-                panelFederacaoLayout.createParallelGroup()
-                    .addGroup(panelFederacaoLayout.createSequentialGroup()
-                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbBemVindo)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelFederacaoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCriarProvaPAG)
-                            .addComponent(btnLogOutPAG)
-                            .addComponent(btnAddResultadoPAG)
-                            .addComponent(btnListarResultadosPAG))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panel2, GroupLayout.PREFERRED_SIZE, 484, GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                    panelFederacaoLayout.createParallelGroup()
+                            .addGroup(panelFederacaoLayout.createSequentialGroup()
+                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbBemVindo)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panelFederacaoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(btnCriarProvaPAG)
+                                            .addComponent(btnLogOutPAG)
+                                            .addComponent(btnAddResultadoPAG)
+                                            .addComponent(btnListarResultadosPAG))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(panel2, GroupLayout.PREFERRED_SIZE, 484, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap())
             );
         }
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addComponent(panelFederacao, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                contentPaneLayout.createParallelGroup()
+                        .addComponent(panelFederacao, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contentPaneLayout.setVerticalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addComponent(panelFederacao, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                contentPaneLayout.createParallelGroup()
+                        .addComponent(panelFederacao, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pack();
         setLocationRelativeTo(getOwner());
