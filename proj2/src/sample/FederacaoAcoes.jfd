@@ -9,8 +9,8 @@ new FormModel {
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {comp panel2::l:::x, seq l {space :::p, comp btnCriarProvaPag:::p::p, par l {seq l {space :::p, comp btnListarResultados:::p::p, space :::p, comp btnAddResultado:::p::p, space :::x, comp btnLogOut:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
-				"$verticalGroup": "par l {seq {space :::x, comp lbBemVindo:::p::p, space :::p, par b {comp btnCriarProvaPag::b:p::p, comp btnListarResultados::b:p::p, comp btnAddResultado::b:p::p, comp btnLogOut::b:p::p}, space :::p, comp panel2:::p:484:p, space :::p}}"
+				"$horizontalGroup": "par l {comp panel2::l:::x, seq l {space :::p, comp btnCriarProvaPAG:::p::p, par l {seq l {space :::p, comp btnAddResultadoPAG:::p::p, space :::p, comp btnListarResultadosPAG:::p::p, space :::x, comp btnLogOutPAG:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
+				"$verticalGroup": "par l {seq {space :::x, comp lbBemVindo:::p::p, space :::p, par b {comp btnCriarProvaPAG::b:p::p, comp btnLogOutPAG::b:p::p, comp btnAddResultadoPAG::b:p::p, comp btnListarResultadosPAG::b:p::p}, space :::p, comp panel2:::p:484:p, space :::p}}"
 			} ) {
 				name: "panelFederacao"
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -19,31 +19,32 @@ new FormModel {
 					"font": new java.awt.Font( "Segoe UI", 0, 30 )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "btnCriarProvaPag"
+					name: "btnCriarProvaPAG"
 					"text": "Criar Prova"
 					"font": new java.awt.Font( "Segoe UI", 0, 22 )
 					"visible": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCriarProvaPainel", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "btnListarResultados"
+					name: "btnListarResultadosPAG"
 					"text": "Listar Resultados"
 					"font": new java.awt.Font( "Segoe UI", 0, 22 )
 					"visible": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnListarResultadosPainel", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "btnLogOut"
+					name: "btnLogOutPAG"
 					"text": "Logout"
 					"font": new java.awt.Font( "Segoe UI", 0, 22 )
 					"visible": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLogOutAcao", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "btnAddResultado"
+					name: "btnAddResultadoPAG"
 					"text": "Adicionar Resultados"
 					"font": new java.awt.Font( "Segoe UI", 0, 22 )
 					"visible": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddResultadoPAGAction", true ) )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 					name: "panel2"
@@ -84,10 +85,10 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {seq l {space :p:261:p, comp btnCriarProva:::p::p}, par t:l {comp txtHora:::p:198:p, seq t {par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, seq l {space :p:19:p, comp lbCategoria2:::p::p}}, space :p:94:p, par l:::p {comp boxCategoria:::::x, comp boxFederacao:::p:198:p}}}}}}, space :::x}}"
-						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:35:p, par t {comp lbCategoria2:::p::p, comp txtHora:::p::p}, space :p:73:p, comp btnCriarProva:::p::p, space :::x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par t {comp txtHora:::p:198:p, seq t {par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, seq l {space :p:19:p, comp lbCategoria2:::p::p}}, space :p:94:p, par l:::p {comp boxCategoria:::::x, comp boxFederacao:::p:198:p}}}}, seq l {space :p:299:p, comp btnCriarProva:::p::p}}, space ::253:x}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:35:p, par t {comp lbCategoria2:::p::p, comp txtHora:::p::p}, space :p:75:p, comp btnCriarProva:::p::p, space ::107:x}}"
 					} ) {
-						name: "panel3"
+						name: "panelCriarProva"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbFederacao"
 							"text": "Federação"
@@ -115,23 +116,84 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnCriarProva"
 							"text": "Criar Prova"
-							"font": new java.awt.Font( "Segoe UI", 0, 25 )
+							"font": &Font1 new java.awt.Font( "Segoe UI", 0, 25 )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbCriarProva"
 							"text": "Criar Pova"
-							"font": new java.awt.Font( "Segoe UI", 0, 30 )
+							"font": &Font2 new java.awt.Font( "Segoe UI", 0, 30 )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {space :0:763:x}"
-						"$verticalGroup": "par l {space :0:484:x}"
+						"$horizontalGroup": "par l {seq t {space ::252:x, comp lbaddResultado:::p::p, space :p:246:p}, seq l {space :p:162:p, par t {comp btnResultadoADD:::p::p, seq {par l {comp lbProva:::p::p, comp lbbarco:::p::p, comp lbTempo::l:p::p}, space :p:128:p, par l:::p {comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x}}}, space ::222:x}}"
+						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :p:60:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, space :p:21:p, par b {comp lbTempo::b:p::p, comp txtTempo::b:p::p}, space :p:32:p, par t {comp lbbarco:::p::p, comp boxBarco:::p::p}, space ::76:x, comp btnResultadoADD:::p::p, space :p:74:p}}"
 					} ) {
-						name: "panel4"
+						name: "paneladdResultado"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbaddResultado"
+							"text": "Adicionar Resultado"
+							"font": #Font2
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "boxBarco"
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "boxProva"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbProva"
+							"text": "Prova"
+							"font": &Font3 new java.awt.Font( "Segoe UI", 0, 26 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbbarco"
+							"text": "Barco"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbTempo"
+							"text": "Tempo"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtTempo"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnResultadoADD"
+							"text": "Adicionar Resultado"
+							"font": #Font1
+						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card2"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq l {space :p:270:p, comp lbListarResultado:::p::p}, seq l {space :p:180:p, comp lbProvaListar:::p::p, space :144:144:p, comp boxProvaListar:::p:171:p}}, space ::204:x}, seq t {space :0:165:x, comp scrollPane1:::p::p, space :p:146:p}}"
+						"$verticalGroup": "par l {seq l {space :p:23:p, comp lbListarResultado:::p:49:p, space :p:33:p, par l {comp lbProvaListar:::p::p, comp boxProvaListar:::p::p}, space :p:28:p, comp scrollPane1:::p:248:p, space ::67:x}}"
+					} ) {
+						name: "panelListarResultados"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbListarResultado"
+							"text": "Listar Resultado"
+							"font": #Font2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbProvaListar"
+							"text": "Prova"
+							"font": #Font3
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "boxProvaListar"
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane1"
+							add( new FormComponent( "javax.swing.JTable" ) {
+								name: "tbAddResultado"
+							} )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card4"
 					} )
 				} )
 			} )
