@@ -18,9 +18,6 @@ public class FederacaoAcoes extends JFrame {
         initComponents();
     }
 
-    private void btnLogin(ActionEvent e) {
-        // TODO add your code here
-    }
 
     private void btnCriarProvaPainel(ActionEvent e) {
         panel2.removeAll();
@@ -178,7 +175,7 @@ public class FederacaoAcoes extends JFrame {
                     //---- btnLogin ----
                     btnLogin.setText("Login");
                     btnLogin.addActionListener(e -> {
-			btnLogin(e);
+
 			btnLoginPainel(e);
 		});
 
