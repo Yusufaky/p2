@@ -6,6 +6,11 @@ package sample;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -55,17 +60,7 @@ public class FederacaoAcoes extends JFrame {
         PopulateTableAnswer();
     }
 
-    private void btnLoginPainel(ActionEvent e) {
-        btnAddResultadoPAG.setVisible(true);
-        btnCriarProvaPAG.setVisible(true);
-        btnListarResultadosPAG.setVisible(true);
-        btnLogOutPAG.setVisible(true);
-        panel2.removeAll();
-        panel2.add(panelCriarProva);
-        panel2.repaint();
-        panel2.revalidate();
 
-    }
 
     private void btnLogOutAcao(ActionEvent e) {
         btnAddResultadoPAG.setVisible(false);
@@ -90,9 +85,53 @@ public class FederacaoAcoes extends JFrame {
         panel2.revalidate();
     }
 
+    private void btnLoginPainel(ActionEvent e) {
+        Connection conn = Util.criarConexao();
+
+        String sqlCommand = "SELECT username, password  FROM federacao where username =? and password=?";
+
+        String username = textUserName.getText();
+        String password = String.valueOf(textPassword.getPassword());
+        
+
+
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlCommand);
+            st.setString(1, username);
+            st.setString(2, password);
+            ResultSet rs = st.executeQuery();
+            System.out.println(username + password
+            );
+            if (rs.next()) {
+                System.out.println(username + password
+                );
+                btnAddResultadoPAG.setVisible(true);
+                btnCriarProvaPAG.setVisible(true);
+                btnListarResultadosPAG.setVisible(true);
+                btnLogOutPAG.setVisible(true);
+                panel2.removeAll();
+                panel2.add(panelCriarProva);
+                panel2.repaint();
+                panel2.revalidate();
+                textPassword.setText("");
+                textUserName.setText("");
+                errologin.setText("");
+            } else {
+                System.out.println("ERRO: "
+                );
+                errologin.setText("Erro a efetuar o login");
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+        }
+    }
+
     private void btnLogin(ActionEvent e) {
         // TODO add your code here
     }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -111,6 +150,7 @@ public class FederacaoAcoes extends JFrame {
         lbPassWord = new JLabel();
         lbUserName2 = new JLabel();
         btnLogin = new JButton();
+        errologin = new JLabel();
         panelCriarProva = new JPanel();
         lbFederacao = new JLabel();
         boxFederacao = new JComboBox();
@@ -229,6 +269,10 @@ public class FederacaoAcoes extends JFrame {
                                         .addGap(226, 226, 226)
                                         .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(148, Short.MAX_VALUE))
+                            .addGroup(GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
+                                .addContainerGap(352, Short.MAX_VALUE)
+                                .addComponent(errologin, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                                .addGap(271, 271, 271))
                     );
                     panelLoginLayout.setVerticalGroup(
                         panelLoginLayout.createParallelGroup()
@@ -245,9 +289,11 @@ public class FederacaoAcoes extends JFrame {
                                     .addGroup(panelLoginLayout.createSequentialGroup()
                                         .addGap(3, 3, 3)
                                         .addComponent(textPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                                .addGap(93, 93, 93)
+                                .addGap(55, 55, 55)
+                                .addComponent(errologin)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(91, Short.MAX_VALUE))
+                                .addContainerGap(95, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelLogin, "card3");
@@ -523,6 +569,7 @@ public class FederacaoAcoes extends JFrame {
     private JLabel lbPassWord;
     private JLabel lbUserName2;
     private JButton btnLogin;
+    private JLabel errologin;
     private JPanel panelCriarProva;
     private JLabel lbFederacao;
     private JComboBox boxFederacao;

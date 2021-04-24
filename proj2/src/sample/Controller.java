@@ -1,37 +1,41 @@
 package sample;
 
 import javax.swing.*;
-
-import com.sun.glass.ui.Screen;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class Controller  implements Initializable {
+public class Controller {
 
-    @FXML
-    private void btnLogin(ActionEvent event) throws IOException {
-        Parent criarProvas_parent = FXMLLoader.load(getClass().getResource("CriarProva.fxml"));
-        Scene criarProvas_scene = new Scene(criarProvas_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(criarProvas_scene);
-        app_stage.show();
 
+    public  void btnVerClube(ActionEvent event){
+
+        List<Clube> listaDeClientes = Clube.readAll("");
+
+        for(Clube cl : listaDeClientes)
+            System.out.println("||ID: " + cl.getId_clube() + " ||Clube : " + cl.getNome() + " ||Localização: " + cl.getLocalizacao()+ " ||Numero de Atletas: " + cl.getN_atletas());
+
+        System.out.println("----------------------------------------------------------------------------------------");
     }
+    public  void btnCatBarco(ActionEvent event){
+        List<CategoriaBarco> listaDeClientes = CategoriaBarco.readAll("");
+        for(CategoriaBarco categoriaBarco : listaDeClientes)
+            System.out.println("||ID: " + categoriaBarco.getId_categoriaBarco() + " ||Nome do Barco : " + categoriaBarco.getNome());
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("----------------------------------------------------------------------------------------");
+    }
+    public  void btnVerProvas(ActionEvent event){
 
+        System.out.println("---------------------------------Ver Provas-------------------------------------------------------");
+    }
+    public  void btnInscreverClube(ActionEvent event){
+        System.out.println("---------------------------------Inscrever Clube-------------------------------------------------------");
+    }
+    public  void btnCriarProva(ActionEvent event){
+        System.out.println("---------------------------------Criar Prova-------------------------------------------------------");
+    }
+    public  void btnInscreverAtleta(ActionEvent event){
+        System.out.println("---------------------------------Inscrever Atleta-------------------------------------------------------");
     }
 }
 

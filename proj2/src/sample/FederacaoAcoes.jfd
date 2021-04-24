@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.10" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -49,8 +49,8 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 					name: "panel2"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:145:p, par l {seq l {space :226:226:p, comp lbUserName2:::p:82:p}, seq l {comp lbUserName:::p::p, space :135:135:p, comp textUserName:::p:244:p}, seq l {space :4:4:p, comp lbPassWord:::p::p, space :135:135:p, comp textPassword:::p:244:p}, seq l {space :226:226:p, comp btnLogin:::p:95:p}}, space ::148:x}}"
-						"$verticalGroup": "par l {seq l {space :p:43:p, comp lbUserName2:::p:53:p, space :60:60:p, par l {comp lbUserName:::p::p, comp textUserName:::p::p}, space :43:43:p, par l {comp lbPassWord:::p::p, seq l {space :3:3:p, comp textPassword:::p::p}}, space :93:93:p, comp btnLogin:::p:38:p, space ::91:x}}"
+						"$horizontalGroup": "par l {seq l {space :p:145:p, par l {seq l {space :226:226:p, comp lbUserName2:::p:82:p}, seq l {comp lbUserName:::p::p, space :135:135:p, comp textUserName:::p:244:p}, seq l {space :4:4:p, comp lbPassWord:::p::p, space :135:135:p, comp textPassword:::p:244:p}, seq l {space :226:226:p, comp btnLogin:::p:95:p}}, space ::148:x}, seq t {space ::352:x, comp errologin:::p:140:p, space :p:271:p}}"
+						"$verticalGroup": "par l {seq l {space :p:43:p, comp lbUserName2:::p:53:p, space :60:60:p, par l {comp lbUserName:::p::p, comp textUserName:::p::p}, space :43:43:p, par l {comp lbPassWord:::p::p, seq l {space :3:3:p, comp textPassword:::p::p}}, space :p:55:p, comp errologin:::p::p, space s:::p, comp btnLogin:::p:38:p, space ::95:x}}"
 					} ) {
 						name: "panelLogin"
 						add( new FormComponent( "javax.swing.JTextField" ) {
@@ -80,6 +80,9 @@ new FormModel {
 							"text": "Login"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLogin", true ) )
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLoginPainel", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "errologin"
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card3"
