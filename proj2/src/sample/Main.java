@@ -31,7 +31,6 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                System.out.println("hey");
                 new FederacaoAcoes().setVisible(true);
             }
         });
