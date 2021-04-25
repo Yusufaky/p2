@@ -35,7 +35,7 @@ public class FederacaoAcoes extends JFrame {
 
             for (Resultados data : allDados) {
                 System.out.println(data.getClassificacao());
-                model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getId_atleta()});
+                model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getNome()});
             }
 
             tbAddResultado.setModel(model_d);
@@ -45,11 +45,106 @@ public class FederacaoAcoes extends JFrame {
         }
     }
 
+    private void DropDownFederacao(){
+
+        List<Resultados> allDados = Resultados.federacao();
+
+
+        try {
+
+            for (Resultados data : allDados) {
+                System.out.println(data.getClassificacao());
+
+                boxFederacao.addItem(data.getClassificacao());
+
+            }
+
+
+        } catch (
+                IndexOutOfBoundsException error) {
+            System.out.println("Sem Resultados..");
+        }
+        System.out.println("teste" + boxFederacao.getSelectedItem()
+        );
+
+    }
+    private void DropDownCategoria(){
+        List<Resultados> allDados = Resultados.categoria();
+
+
+
+        try {
+
+            for (Resultados data : allDados) {
+                System.out.println(data.getClassificacao());
+
+                boxCategoria.addItem(data.getClassificacao());
+
+            }
+
+        } catch (
+                IndexOutOfBoundsException error) {
+            System.out.println("Sem Resultados..");
+        }
+        System.out.println("teste" + boxCategoria.getSelectedItem()
+        );
+
+    }
+    private void DropDownProva(){
+        List<Resultados> allDados = Resultados.prova();
+
+
+
+        try {
+
+            for (Resultados data : allDados) {
+                System.out.println(data.getClassificacao());
+
+                boxProva.addItem(data.getClassificacao());
+                boxProvaListar.addItem(data.getClassificacao());
+
+            }
+
+
+        } catch (
+                IndexOutOfBoundsException error) {
+            System.out.println("Sem Resultados..");
+        }
+        System.out.println("teste" + boxFederacao.getSelectedItem()
+        );
+
+    }
+    private void DropDownBarco(){
+        List<Resultados> allDados = Resultados.barco();
+
+
+
+        try {
+
+            for (Resultados data : allDados) {
+                System.out.println(data.getClassificacao());
+
+                boxBarco.addItem(data.getClassificacao());
+
+            }
+
+        } catch (
+                IndexOutOfBoundsException error) {
+            System.out.println("Sem Resultados..");
+        }
+        System.out.println("teste" + boxBarco.getSelectedItem()
+        );
+
+    }
+
+
     private void btnCriarProvaPainel(ActionEvent e) {
         panel2.removeAll();
         panel2.add(panelCriarProva);
         panel2.repaint();
         panel2.revalidate();
+
+
     }
 
     private void btnListarResultadosPainel(ActionEvent e) {
@@ -88,7 +183,7 @@ public class FederacaoAcoes extends JFrame {
     private void btnLoginPainel(ActionEvent e) {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT username, password  FROM federacao where username =? and password=?";
+        String sqlCommand = "SELECT username, pass  FROM federacao where username =? and pass=?";
 
         String username = textUserName.getText();
         String password = String.valueOf(textPassword.getPassword());
@@ -116,6 +211,10 @@ public class FederacaoAcoes extends JFrame {
                 textPassword.setText("");
                 textUserName.setText("");
                 errologin.setText("");
+                DropDownFederacao();
+                DropDownCategoria();
+                DropDownProva();
+                DropDownBarco();
             } else {
                 System.out.println("ERRO: "
                 );
@@ -130,6 +229,14 @@ public class FederacaoAcoes extends JFrame {
 
     private void btnLogin(ActionEvent e) {
         // TODO add your code here
+    }
+
+    private void btnCriarProvaSub(ActionEvent e) {
+         String fed = boxFederacao.getSelectedItem().toString();
+         String cat = boxCategoria.getSelectedItem().toString();
+         String hora = txtHora.getText();
+
+       System.out.println(fed +  cat  + hora);
     }
 
 
@@ -197,6 +304,7 @@ public class FederacaoAcoes extends JFrame {
             btnCriarProvaPAG.setText("Criar Prova");
             btnCriarProvaPAG.setFont(new Font("Segoe UI", Font.PLAIN, 22));
             btnCriarProvaPAG.setVisible(false);
+            btnCriarProva.addActionListener(e->btnCriarProvaSub(e));
             btnCriarProvaPAG.addActionListener(e -> btnCriarProvaPainel(e));
 
             //---- btnListarResultadosPAG ----
@@ -552,6 +660,8 @@ public class FederacaoAcoes extends JFrame {
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
+
+
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Marcos
