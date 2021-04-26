@@ -210,7 +210,7 @@ public class Resultados {
     public static List<Resultados> categoria() {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT id_catprova, distancia FROM catprova";
+        String sqlCommand = "SELECT id_catprova, distancia , descricao FROM catprova";
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -222,7 +222,7 @@ public class Resultados {
                 Resultados cli = new Resultados();
 
                 cli.setId_Resultado(rs.getInt("id_catprova"));
-                if (rs.getString("distancia") != null) cli.setClassificacao(rs.getString("distancia"));
+                if (rs.getString("descricao") != null) cli.setClassificacao(rs.getString("descricao"));
                 //
 
 
@@ -236,7 +236,67 @@ public class Resultados {
         return lista;
     }
 
+    public static boolean insert(String federacao, String categoria,String ano,String mes,String dias, String horas) {
+        Connection conn = Util.criarConexao();
 
+        String sqlCat = "SELECT id_catprova FROM catprova where descricao = ? ";
+        String sqlFed = "SELECT id_federacao FROM federacao where nome = ?  ";
+        String sqlInsert =  "INSERT INTO prova (id_catprova, id_federacao, hora, datadia)  values ( ?, ?, ?,?)";
+
+        boolean inserido = true;
+
+        try {
+            PreparedStatement stf = conn.prepareStatement(sqlFed);
+            stf.setString(1, federacao);
+            PreparedStatement stc = conn.prepareStatement(sqlCat);
+            stc.setString(1, categoria);
+
+            ResultSet rsf = stf.executeQuery();
+            ResultSet rsc = stc.executeQuery();
+
+            while (rsf.next()) {
+                int fed_id = rsf.getInt("id_federacao");
+
+
+                System.out.println("Teste id_ federacap:"  + fed_id);
+            }
+            while (rsc.next()) {
+                  int cat_id = rsc.getInt("id_catprova");
+
+
+                System.out.println("Teste id_cat:"  + cat_id);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+        }
+
+        String data= ano +"-"+mes+"-"+dias;
+        //System.out.println("ERRO: "+data);
+       int teste = 1;
+        int teste1 = 1;
+        try {
+            PreparedStatement sti = conn.prepareStatement(sqlInsert);
+            sti.setInt(1, teste);
+            sti.setInt(2, teste1);
+            sti.setString(3, horas);
+            sti.setString(4, data);
+            sti.executeUpdate();
+
+
+
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+            inserido = false;
+        }
+
+        System.out.println(" isnert: " +federacao + " "+ categoria+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
+
+        return inserido;
+    }
    /* //GOOD
     public void update() {
         // PreparedStatement

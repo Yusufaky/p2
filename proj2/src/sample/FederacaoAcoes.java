@@ -29,7 +29,7 @@ public class FederacaoAcoes extends JFrame {
         List<Resultados> allDados = Resultados.readAll();
 
 
-        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Classificacao", "Prova", "Atleta"}, 0);
+        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Name", "ID Prova", "ID Atleta"}, 0);
         //Adiciona os medicamentos na tablela
         try {
 
@@ -234,9 +234,19 @@ public class FederacaoAcoes extends JFrame {
     private void btnCriarProvaSub(ActionEvent e) {
          String fed = boxFederacao.getSelectedItem().toString();
          String cat = boxCategoria.getSelectedItem().toString();
-        // String hora = spCriarHoras
+         String ano  = spCriarAno.getValue().toString();
+         String mes  = spCriarMes.getValue().toString();
+        String dias  = spCriarDias.getValue().toString();
+        String horas = spCriarHoras.getValue().toString();
+     //   int fedteste = boxFederacao.getSelectedIndex();
 
-       System.out.println(fed +  cat );
+        if (Resultados.insert(fed,cat,ano,mes,dias,horas) == true){
+            lbCriarProvaSucesso.setText("Sucesso");
+        }else{
+            lbCriarProvaSucesso.setText("Falhou");
+        };
+      // System.out.println(fed + " "+ cat+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
+
     }
 
 
@@ -299,12 +309,13 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
-            . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax
-            . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,
-            12 ), java. awt. Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans
-            . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .
-            getPropertyName () )) throw new RuntimeException( ); }} );
+            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
+            . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing
+            . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
+            Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
+            ) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
+            public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName (
+            ) )) throw new RuntimeException( ); }} );
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -315,6 +326,8 @@ public class FederacaoAcoes extends JFrame {
             btnCriarProvaPAG.setFont(new Font("Segoe UI", Font.PLAIN, 22));
             btnCriarProvaPAG.setVisible(false);
             btnCriarProvaPAG.addActionListener(e -> btnCriarProvaPainel(e));
+            btnCriarProva.addActionListener(e -> btnCriarProvaSub(e));
+
 
             //---- btnListarResultadosPAG ----
             btnListarResultadosPAG.setText("Listar Resultados");
