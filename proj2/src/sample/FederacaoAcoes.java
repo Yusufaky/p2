@@ -29,7 +29,7 @@ public class FederacaoAcoes extends JFrame {
         List<Resultados> allDados = Resultados.readAll();
 
 
-        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Name", "ID Prova", "ID Atleta"}, 0);
+        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Classificacao", "Prova", "Atleta"}, 0);
         //Adiciona os medicamentos na tablela
         try {
 
@@ -234,9 +234,9 @@ public class FederacaoAcoes extends JFrame {
     private void btnCriarProvaSub(ActionEvent e) {
          String fed = boxFederacao.getSelectedItem().toString();
          String cat = boxCategoria.getSelectedItem().toString();
-         String hora = txtHora.getText();
+        // String hora = spCriarHoras
 
-       System.out.println(fed +  cat  + hora);
+       System.out.println(fed +  cat );
     }
 
 
@@ -263,10 +263,15 @@ public class FederacaoAcoes extends JFrame {
         boxFederacao = new JComboBox();
         lbCategoria = new JLabel();
         boxCategoria = new JComboBox();
-        lbCategoria2 = new JLabel();
-        txtHora = new JTextField();
+        lbHora = new JLabel();
         btnCriarProva = new JButton();
         lbCriarProva = new JLabel();
+        lbCriarProvaSucesso = new JLabel();
+        spCriarHoras = new JSpinner();
+        spCriarDias = new JSpinner();
+        spCriarMes = new JSpinner();
+        spCriarAno = new JSpinner();
+        lbData = new JLabel();
         paneladdResultado = new JPanel();
         lbaddResultado = new JLabel();
         boxBarco = new JComboBox();
@@ -276,6 +281,12 @@ public class FederacaoAcoes extends JFrame {
         lbTempo = new JLabel();
         txtTempo = new JTextField();
         btnResultadoADD = new JButton();
+        lbAtleta = new JLabel();
+        boxAtleta = new JComboBox();
+        lbClassificacao = new JLabel();
+        boxClassificacao = new JComboBox();
+        lbResultadosCriados = new JLabel();
+        txtClassificacao = new JTextField();
         panelListarResultados = new JPanel();
         lbListarResultado = new JLabel();
         lbProvaListar = new JLabel();
@@ -288,13 +299,12 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-            javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax
-            . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
-            .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-            . Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans.
-            PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .
-            equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
+            . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax
+            . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,
+            12 ), java. awt. Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans
+            . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .
+            getPropertyName () )) throw new RuntimeException( ); }} );
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -304,7 +314,6 @@ public class FederacaoAcoes extends JFrame {
             btnCriarProvaPAG.setText("Criar Prova");
             btnCriarProvaPAG.setFont(new Font("Segoe UI", Font.PLAIN, 22));
             btnCriarProvaPAG.setVisible(false);
-            btnCriarProva.addActionListener(e->btnCriarProvaSub(e));
             btnCriarProvaPAG.addActionListener(e -> btnCriarProvaPainel(e));
 
             //---- btnListarResultadosPAG ----
@@ -376,9 +385,9 @@ public class FederacaoAcoes extends JFrame {
                                     .addGroup(panelLoginLayout.createSequentialGroup()
                                         .addGap(226, 226, 226)
                                         .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(148, Short.MAX_VALUE))
+                                .addContainerGap(199, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
-                                .addContainerGap(352, Short.MAX_VALUE)
+                                .addContainerGap(403, Short.MAX_VALUE)
                                 .addComponent(errologin, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                                 .addGap(271, 271, 271))
                     );
@@ -401,7 +410,7 @@ public class FederacaoAcoes extends JFrame {
                                 .addComponent(errologin)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(95, Short.MAX_VALUE))
+                                .addContainerGap(111, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelLogin, "card3");
@@ -417,9 +426,9 @@ public class FederacaoAcoes extends JFrame {
                     lbCategoria.setText("Categoria");
                     lbCategoria.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 
-                    //---- lbCategoria2 ----
-                    lbCategoria2.setText("Hora");
-                    lbCategoria2.setFont(new Font("Segoe UI", Font.PLAIN, 25));
+                    //---- lbHora ----
+                    lbHora.setText("Hora");
+                    lbHora.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 
                     //---- btnCriarProva ----
                     btnCriarProva.setText("Criar Prova");
@@ -428,6 +437,22 @@ public class FederacaoAcoes extends JFrame {
                     //---- lbCriarProva ----
                     lbCriarProva.setText("Criar Pova");
                     lbCriarProva.setFont(new Font("Segoe UI", Font.PLAIN, 30));
+
+                    //---- spCriarHoras ----
+                    spCriarHoras.setModel(new SpinnerListModel(new String[] {"08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30"}));
+
+                    //---- spCriarDias ----
+                    spCriarDias.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+
+                    //---- spCriarMes ----
+                    spCriarMes.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+
+                    //---- spCriarAno ----
+                    spCriarAno.setModel(new SpinnerListModel(new String[] {"2021", "2022"}));
+
+                    //---- lbData ----
+                    lbData.setText("Data");
+                    lbData.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 
                     GroupLayout panelCriarProvaLayout = new GroupLayout(panelCriarProva);
                     panelCriarProva.setLayout(panelCriarProvaLayout);
@@ -439,25 +464,31 @@ public class FederacaoAcoes extends JFrame {
                                         .addGap(319, 319, 319)
                                         .addComponent(lbCriarProva))
                                     .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                        .addGap(103, 103, 103)
-                                        .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                                .addGroup(panelCriarProvaLayout.createParallelGroup()
-                                                    .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(lbCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(lbFederacao))
-                                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                                        .addGap(19, 19, 19)
-                                                        .addComponent(lbCategoria2)))
-                                                .addGap(94, 94, 94)
-                                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(boxCategoria)
-                                                    .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)))))
+                                        .addGap(344, 344, 344)
+                                        .addComponent(lbCriarProvaSucesso, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panelCriarProvaLayout.createSequentialGroup()
-                                        .addGap(299, 299, 299)
-                                        .addComponent(btnCriarProva)))
-                                .addContainerGap(253, Short.MAX_VALUE))
+                                        .addGap(296, 296, 296)
+                                        .addComponent(btnCriarProva))
+                                    .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                        .addGap(103, 103, 103)
+                                        .addGroup(panelCriarProvaLayout.createParallelGroup()
+                                            .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(lbCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lbFederacao))
+                                            .addComponent(lbHora)
+                                            .addComponent(lbData))
+                                        .addGap(78, 78, 78)
+                                        .addGroup(panelCriarProvaLayout.createParallelGroup()
+                                            .addComponent(boxFederacao, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(boxCategoria, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(spCriarHoras, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(panelCriarProvaLayout.createSequentialGroup()
+                                                .addComponent(spCriarAno, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(spCriarMes, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(spCriarDias, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)))))
+                                .addContainerGap(192, Short.MAX_VALUE))
                     );
                     panelCriarProvaLayout.setVerticalGroup(
                         panelCriarProvaLayout.createParallelGroup()
@@ -472,13 +503,21 @@ public class FederacaoAcoes extends JFrame {
                                 .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(lbCategoria)
                                     .addComponent(boxCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(35, 35, 35)
-                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbCategoria2)
-                                    .addComponent(txtHora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(75, 75, 75)
+                                .addGap(18, 18, 18)
+                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(spCriarAno, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbData)
+                                    .addComponent(spCriarMes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spCriarDias, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelCriarProvaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(spCriarHoras, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbHora))
+                                .addGap(42, 42, 42)
+                                .addComponent(lbCriarProvaSucesso, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnCriarProva)
-                                .addContainerGap(107, Short.MAX_VALUE))
+                                .addContainerGap(81, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(panelCriarProva, "card1");
@@ -506,50 +545,85 @@ public class FederacaoAcoes extends JFrame {
                     btnResultadoADD.setText("Adicionar Resultado");
                     btnResultadoADD.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 
+                    //---- lbAtleta ----
+                    lbAtleta.setText("Atleta");
+                    lbAtleta.setFont(new Font("Segoe UI", Font.PLAIN, 26));
+
+                    //---- lbClassificacao ----
+                    lbClassificacao.setText("Classificacao");
+                    lbClassificacao.setFont(lbClassificacao.getFont().deriveFont(lbClassificacao.getFont().getSize() + 14f));
+
                     GroupLayout paneladdResultadoLayout = new GroupLayout(paneladdResultado);
                     paneladdResultado.setLayout(paneladdResultadoLayout);
                     paneladdResultadoLayout.setHorizontalGroup(
                         paneladdResultadoLayout.createParallelGroup()
                             .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
-                                .addContainerGap(252, Short.MAX_VALUE)
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lbaddResultado)
                                 .addGap(246, 246, 246))
                             .addGroup(paneladdResultadoLayout.createSequentialGroup()
                                 .addGap(162, 162, 162)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnResultadoADD)
+                                .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                    .addGroup(paneladdResultadoLayout.createSequentialGroup()
+                                        .addComponent(lbAtleta)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(boxAtleta, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnResultadoADD)
+                                        .addGap(14, 14, 14))
                                     .addGroup(paneladdResultadoLayout.createSequentialGroup()
                                         .addGroup(paneladdResultadoLayout.createParallelGroup()
-                                            .addComponent(lbProva)
+                                            .addComponent(lbTempo)
                                             .addComponent(lbbarco)
-                                            .addComponent(lbTempo))
-                                        .addGap(128, 128, 128)
-                                        .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(boxProva, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(txtTempo, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(boxBarco, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))))
-                                .addContainerGap(222, Short.MAX_VALUE))
+                                            .addComponent(lbClassificacao)
+                                            .addComponent(lbProva))
+                                        .addGap(112, 112, 112)
+                                        .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                            .addComponent(boxProva)
+                                            .addComponent(boxBarco)
+                                            .addGroup(paneladdResultadoLayout.createSequentialGroup()
+                                                .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                                    .addComponent(boxClassificacao, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtTempo, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(lbResultadosCriados))
+                                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(txtClassificacao, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
                     );
                     paneladdResultadoLayout.setVerticalGroup(
                         paneladdResultadoLayout.createParallelGroup()
                             .addGroup(paneladdResultadoLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(lbaddResultado, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
+                                .addGap(15, 15, 15)
+                                .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                    .addComponent(lbAtleta)
+                                    .addComponent(boxAtleta, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup()
                                     .addComponent(lbProva)
                                     .addComponent(boxProva, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(lbTempo)
                                     .addComponent(txtTempo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)
-                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbbarco)
-                                    .addComponent(boxBarco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(boxBarco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbbarco))
+                                .addGap(23, 23, 23)
+                                .addGroup(paneladdResultadoLayout.createParallelGroup()
+                                    .addComponent(lbClassificacao)
+                                    .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(boxClassificacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtClassificacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(lbResultadosCriados)
+                                .addGap(27, 27, 27)
                                 .addComponent(btnResultadoADD)
-                                .addGap(74, 74, 74))
+                                .addContainerGap(63, Short.MAX_VALUE))
                     );
                 }
                 panel2.add(paneladdResultado, "card2");
@@ -584,9 +658,9 @@ public class FederacaoAcoes extends JFrame {
                                         .addComponent(lbProvaListar)
                                         .addGap(144, 144, 144)
                                         .addComponent(boxProvaListar, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(204, Short.MAX_VALUE))
+                                .addContainerGap(255, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panelListarResultadosLayout.createSequentialGroup()
-                                .addGap(0, 165, Short.MAX_VALUE)
+                                .addGap(0, 216, Short.MAX_VALUE)
                                 .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addGap(146, 146, 146))
                     );
@@ -685,10 +759,15 @@ public class FederacaoAcoes extends JFrame {
     private JComboBox boxFederacao;
     private JLabel lbCategoria;
     private JComboBox boxCategoria;
-    private JLabel lbCategoria2;
-    private JTextField txtHora;
+    private JLabel lbHora;
     private JButton btnCriarProva;
     private JLabel lbCriarProva;
+    private JLabel lbCriarProvaSucesso;
+    private JSpinner spCriarHoras;
+    private JSpinner spCriarDias;
+    private JSpinner spCriarMes;
+    private JSpinner spCriarAno;
+    private JLabel lbData;
     private JPanel paneladdResultado;
     private JLabel lbaddResultado;
     private JComboBox boxBarco;
@@ -698,6 +777,12 @@ public class FederacaoAcoes extends JFrame {
     private JLabel lbTempo;
     private JTextField txtTempo;
     private JButton btnResultadoADD;
+    private JLabel lbAtleta;
+    private JComboBox boxAtleta;
+    private JLabel lbClassificacao;
+    private JComboBox boxClassificacao;
+    private JLabel lbResultadosCriados;
+    private JTextField txtClassificacao;
     private JPanel panelListarResultados;
     private JLabel lbListarResultado;
     private JLabel lbProvaListar;
