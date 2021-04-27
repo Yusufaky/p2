@@ -117,6 +117,7 @@ new FormModel {
 							name: "btnCriarProva"
 							"text": "Criar Prova"
 							"font": &Font2 new java.awt.Font( "Segoe UI", 0, 25 )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCriarProvaADDPRova", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbCriarProva"
@@ -273,6 +274,7 @@ new FormModel {
 							name: "btnResultadoADD"
 							"text": "Adicionar Resultado"
 							"font": #Font2
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnResultadoADD", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbAtleta"

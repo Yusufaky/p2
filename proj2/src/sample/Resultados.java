@@ -153,7 +153,7 @@ public class Resultados {
     public static List<Resultados> prova() {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT prova.id_prova, prova.id_catprova, catprova.descricao FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
+        String sqlCommand = "SELECT prova.id_prova, prova.id_catprova, catprova.distancia FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -165,7 +165,7 @@ public class Resultados {
                 Resultados cli = new Resultados();
 
                 cli.setId_Resultado(rs.getInt("id_prova"));
-                if (rs.getString("descricao") != null) cli.setClassificacao(rs.getString("descricao"));
+                if (rs.getString("distancia") != null) cli.setClassificacao(rs.getString("distancia"));
                 //
 
 
@@ -324,6 +324,62 @@ public class Resultados {
 
         return inserido;
     }
+    //ADICIONAR RESULTADOS
+    /*public static boolean insertResultado(String atleta, String prova,String tempo,String barco,String classificacao) {
+        Connection conn = Util.criarConexao();
+
+        String sqlProv = "SELECT prova.id_prova FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
+        String sqlAtl = "SELECT id_atleta FROM atleta where nome = ?  ";
+        String sqlInsert =  "INSERT INTO resultado (classificacao, id_prova, id_atleta)  values ( ?, ?, ?)";
+
+        boolean inserido = true;
+
+        try {
+            PreparedStatement stf = conn.prepareStatement(sqlAtl);
+            stf.setString(1, atleta);
+            PreparedStatement stc = conn.prepareStatement(sqlProv);
+            stc.setString(1, prova);
+
+            ResultSet rsf = stf.executeQuery();
+            ResultSet rsc = stc.executeQuery();
+
+            while (rsf.next()) {
+                int atleta_id = rsf.getInt("id_atleta");
+
+
+                System.out.println("Teste id_ id_atleta:"  + atleta_id);
+            }
+            while (rsc.next()) {
+                  int prova_id = rsc.getInt("id_prova");
+
+
+                System.out.println("Teste id_prova:"  + prova_id);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+        }
+        //System.out.println("ERRO: "+data);
+       int teste = 1;
+        int teste1 = 1;
+        try {
+            PreparedStatement sti = conn.prepareStatement(sqlInsert);
+            sti.setInt(1, teste);
+            sti.setInt(2, teste1);
+            sti.setString(3, classificacao);
+            sti.executeUpdate();
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+            inserido = false;
+        }
+
+        //System.out.println(" isnert: " +sqlAtl + " "+prova+ " "+tempo+" " + barco+ " "+ classificacao);
+
+        return inserido;
+    }*/ //ADICIONAR RESULTADOS
    /* //GOOD
     public void update() {
         // PreparedStatement

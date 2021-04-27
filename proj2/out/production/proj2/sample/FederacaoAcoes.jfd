@@ -117,6 +117,7 @@ new FormModel {
 							name: "btnCriarProva"
 							"text": "Criar Prova"
 							"font": &Font2 new java.awt.Font( "Segoe UI", 0, 25 )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCriarProvaADDPRova", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbCriarProva"
@@ -236,8 +237,8 @@ new FormModel {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq t {space ::252:x, comp lbaddResultado:::p::p, space :p:246:p}, seq l {space :p:162:p, par t {comp btnResultadoADD:::p::p, seq t {par l {comp lbProva:::p::p, comp lbTempo::l:p::p, comp lbbarco::l:p::p, comp lbbarco2::l:p::p, comp lbAtleta:::p::p}, space :66:66:p, par l {comp boxAtleta:::p:171:p, comp boxClassificacao:::p:171:p, par l:::p {comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x}}, space :p:78:p}}, space ::144:x}}"
-						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :::p, par l {comp boxAtleta:::p::p, comp lbAtleta:::p::p}, space :p:18:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, par l {seq {space :p:21:p, comp lbTempo:::p::p}, seq l {space s:::p, comp txtTempo:::p::p}}, space :p:21:p, par l {comp boxBarco:::p::p, comp lbbarco:::p::p}, space s:::p, par l {comp lbbarco2:::p::p, comp boxClassificacao:::p::p}, space ::36:x, comp btnResultadoADD:::p::p, space :p:74:p}}"
+						"$horizontalGroup": "par l {seq l {space :p:162:p, par l {comp lbProva:::p::p, comp lbTempo::l:p::p, comp lbbarco::l:p::p, comp lbbarco2::l:p::p, comp lbAtleta:::p::p}, space :66:66:p, par l:::p {comp boxAtleta::::171:x, comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x, comp spClassificacao::l::171:x}, space ::222:x}, seq t {space ::252:x, par l {seq t {comp lbaddResultado:::p::p, space :p:246:p}, seq t {comp btnResultadoADD:::p::p, space :p:201:p}, seq t {comp lbCriadoSucessoResultado:::p::p, space :p:319:p}}}}"
+						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :::p, par l {comp boxAtleta:::p::p, comp lbAtleta:::p::p}, space :p:18:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, par l {seq {space :p:21:p, comp lbTempo:::p::p}, seq l {space s:::p, comp txtTempo:::p::p}}, space :p:21:p, par l {comp boxBarco:::p::p, comp lbbarco:::p::p}, space s:::p, par b {comp lbbarco2::b:p::p, comp spClassificacao::b:p::p}, space ::45:x, comp lbCriadoSucessoResultado:::p::p, space u:::p, comp btnResultadoADD:::p::p, space :p:50:p}}"
 					} ) {
 						name: "paneladdResultado"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -273,6 +274,7 @@ new FormModel {
 							name: "btnResultadoADD"
 							"text": "Adicionar Resultado"
 							"font": #Font2
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnResultadoADD", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbAtleta"
@@ -287,8 +289,23 @@ new FormModel {
 							"text": "Classificacao"
 							"font": #SwingDerivedFont0
 						} )
-						add( new FormComponent( "javax.swing.JComboBox" ) {
-							name: "boxClassificacao"
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spClassificacao"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbCriadoSucessoResultado"
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card2"
