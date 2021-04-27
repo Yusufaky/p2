@@ -153,7 +153,7 @@ public class Resultados {
     public static List<Resultados> prova() {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT prova.id_prova, prova.id_catprova, catprova.distancia FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
+        String sqlCommand = "SELECT prova.id_prova, prova.id_catprova, catprova.descricao FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -165,7 +165,34 @@ public class Resultados {
                 Resultados cli = new Resultados();
 
                 cli.setId_Resultado(rs.getInt("id_prova"));
-                if (rs.getString("distancia") != null) cli.setClassificacao(rs.getString("distancia"));
+                if (rs.getString("descricao") != null) cli.setClassificacao(rs.getString("descricao"));
+                //
+
+
+                lista.add(cli);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("ERRO: " + ex.getMessage());
+        }
+
+        return lista;
+    }    public static List<Resultados> alteta() {
+        Connection conn = Util.criarConexao();
+
+        String sqlCommand = "SELECT atleta.id_atleta, atleta.nome FROM atleta";
+
+
+        List<Resultados> lista = new ArrayList<>();
+
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlCommand);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Resultados cli = new Resultados();
+
+                cli.setId_Resultado(rs.getInt("id_atleta"));
+                if (rs.getString("nome") != null) cli.setClassificacao(rs.getString("nome"));
                 //
 
 
@@ -293,7 +320,7 @@ public class Resultados {
             inserido = false;
         }
 
-        System.out.println(" isnert: " +federacao + " "+ categoria+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
+        System.out.println(" isnert: " +federacao + " "+ categoria+ " "+data+" " + horas);
 
         return inserido;
     }

@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.10" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -50,7 +50,7 @@ new FormModel {
 					name: "panel2"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 						"$horizontalGroup": "par l {seq l {space :p:145:p, par l {seq l {space :226:226:p, comp lbUserName2:::p:82:p}, seq l {comp lbUserName:::p::p, space :135:135:p, comp textUserName:::p:244:p}, seq l {space :4:4:p, comp lbPassWord:::p::p, space :135:135:p, comp textPassword:::p:244:p}, seq l {space :226:226:p, comp btnLogin:::p:95:p}}, space ::148:x}, seq t {space ::352:x, comp errologin:::p:140:p, space :p:271:p}}"
-						"$verticalGroup": "par l {seq l {space :p:43:p, comp lbUserName2:::p:53:p, space :60:60:p, par l {comp lbUserName:::p::p, comp textUserName:::p::p}, space :43:43:p, par l {comp lbPassWord:::p::p, seq l {space :3:3:p, comp textPassword:::p::p}}, space :p:55:p, comp errologin:::p::p, space s:::p, comp btnLogin:::p:38:p, space ::95:x}}"
+						"$verticalGroup": "par l {seq l {space :p:43:p, comp lbUserName2:::p:53:p, space :60:60:p, par l {comp lbUserName:::p::p, comp textUserName:::p::p}, space :43:43:p, par l {comp lbPassWord:::p::p, seq l {space :3:3:p, comp textPassword:::p::p}}, space :p:55:p, comp errologin:::p::p, space s:::p, comp btnLogin:::p:38:p, space ::111:x}}"
 					} ) {
 						name: "panelLogin"
 						add( new FormComponent( "javax.swing.JTextField" ) {
@@ -88,8 +88,8 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par t {comp txtHora:::p:198:p, seq t {par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, seq l {space :p:19:p, comp lbCategoria2:::p::p}}, space :p:94:p, par l:::p {comp boxCategoria:::::x, comp boxFederacao:::p:198:p}}}}, seq l {space :p:299:p, comp btnCriarProva:::p::p}}, space ::253:x}}"
-						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:35:p, par t {comp lbCategoria2:::p::p, comp txtHora:::p::p}, space :p:75:p, comp btnCriarProva:::p::p, space ::107:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, comp lbData::l:p::p, comp lbHora::l:p::p}, par l {seq l {space :p:95:p, comp spCriarHoras:::p::p}, seq l {space :p:94:p, par l:::p {seq l {comp spCriarAno:::p::p, space s:::p, comp spCriarMes:::p::p, space u:::p, comp spCriarDias:::p::p}, comp boxCategoria::l:::x, comp boxFederacao::l:::x}}}}, seq l {space :p:291:p, comp btnCriarProva:::p::p}, seq l {space :p:360:p, comp lbCriarProvaSucesso:::p::p}}, space ::157:x}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:23:p, par b {comp lbData::b:p::p, comp spCriarAno::b:p::p, comp spCriarMes::b:p::p, comp spCriarDias::b:p::p}, space s:::p, par b {comp lbHora::b:p::p, comp spCriarHoras::b:p::p}, space :p:21:p, comp lbCriarProvaSucesso:::p::p, space s:::p, comp btnCriarProva:::p::p, space ::97:x}}"
 					} ) {
 						name: "panelCriarProva"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -109,35 +109,141 @@ new FormModel {
 							name: "boxCategoria"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "lbCategoria2"
-							"text": "Hora"
-							"font": new java.awt.Font( "Segoe UI", 0, 25 )
-						} )
-						add( new FormComponent( "javax.swing.JTextField" ) {
-							name: "txtHora"
+							name: "lbData"
+							"text": "Data"
+							"font": &Font1 new java.awt.Font( "Segoe UI", 0, 25 )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnCriarProva"
 							"text": "Criar Prova"
-							"font": &Font1 new java.awt.Font( "Segoe UI", 0, 25 )
+							"font": &Font2 new java.awt.Font( "Segoe UI", 0, 25 )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbCriarProva"
 							"text": "Criar Pova"
-							"font": &Font2 new java.awt.Font( "Segoe UI", 0, 30 )
+							"font": &Font3 new java.awt.Font( "Segoe UI", 0, 30 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbHora"
+							"text": "Hora"
+							"font": #Font1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbCriarProvaSucesso"
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spCriarAno"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "2021" )
+									add( "2022" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spCriarMes"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+									add( "9" )
+									add( "10" )
+									add( "11" )
+									add( "12" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spCriarDias"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+									add( "9" )
+									add( "10" )
+									add( "11" )
+									add( "12" )
+									add( "13" )
+									add( "14" )
+									add( "15" )
+									add( "16" )
+									add( "17" )
+									add( "18" )
+									add( "19" )
+									add( "20" )
+									add( "21" )
+									add( "22" )
+									add( "23" )
+									add( "24" )
+									add( "25" )
+									add( "26" )
+									add( "27" )
+									add( "28" )
+									add( "29" )
+									add( "30" )
+									add( "31" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spCriarHoras"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "08:00" )
+									add( "08:30" )
+									add( "09:00" )
+									add( "09:30" )
+									add( "10:00" )
+									add( "10:30" )
+									add( "11:00" )
+									add( "11:30" )
+									add( "12:00" )
+									add( "12:30" )
+									add( "13:00" )
+									add( "13:30" )
+									add( "14:00" )
+									add( "14:30" )
+									add( "15:00" )
+									add( "15:30" )
+									add( "16:00" )
+									add( "16:30" )
+									add( "17:00" )
+									add( "17:30" )
+									add( "18:00" )
+									add( "18:30" )
+									add( "19:00" )
+									add( "19:30" )
+									add( "20:00" )
+									add( "20:30" )
+									add( "21:00" )
+									add( "21:30" )
+								}
+							}
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq t {space ::252:x, comp lbaddResultado:::p::p, space :p:246:p}, seq l {space :p:162:p, par t {comp btnResultadoADD:::p::p, seq {par l {comp lbProva:::p::p, comp lbbarco:::p::p, comp lbTempo::l:p::p}, space :p:128:p, par l:::p {comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x}}}, space ::222:x}}"
-						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :p:60:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, space :p:21:p, par b {comp lbTempo::b:p::p, comp txtTempo::b:p::p}, space :p:32:p, par t {comp lbbarco:::p::p, comp boxBarco:::p::p}, space ::76:x, comp btnResultadoADD:::p::p, space :p:74:p}}"
+						"$horizontalGroup": "par l {seq l {space :p:162:p, par l {comp lbProva:::p::p, comp lbTempo::l:p::p, comp lbbarco::l:p::p, comp lbbarco2::l:p::p, comp lbAtleta:::p::p}, space :66:66:p, par l:::p {comp boxAtleta::::171:x, comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x, comp spClassificacao::l::171:x}, space ::222:x}, seq t {space ::252:x, par l {seq t {comp lbaddResultado:::p::p, space :p:246:p}, seq t {comp btnResultadoADD:::p::p, space :p:201:p}, seq t {comp lbCriadoSucessoResultado:::p::p, space :p:319:p}}}}"
+						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :::p, par l {comp boxAtleta:::p::p, comp lbAtleta:::p::p}, space :p:18:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, par l {seq {space :p:21:p, comp lbTempo:::p::p}, seq l {space s:::p, comp txtTempo:::p::p}}, space :p:21:p, par l {comp boxBarco:::p::p, comp lbbarco:::p::p}, space s:::p, par b {comp lbbarco2::b:p::p, comp spClassificacao::b:p::p}, space ::45:x, comp lbCriadoSucessoResultado:::p::p, space u:::p, comp btnResultadoADD:::p::p, space :p:50:p}}"
 					} ) {
 						name: "paneladdResultado"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbaddResultado"
 							"text": "Adicionar Resultado"
-							"font": #Font2
+							"font": #Font3
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "boxBarco"
@@ -148,12 +254,12 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbProva"
 							"text": "Prova"
-							"font": &Font3 new java.awt.Font( "Segoe UI", 0, 26 )
+							"font": &Font4 new java.awt.Font( "Segoe UI", 0, 26 )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbbarco"
 							"text": "Barco"
-							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
+							"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbTempo"
@@ -166,7 +272,38 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnResultadoADD"
 							"text": "Adicionar Resultado"
-							"font": #Font1
+							"font": #Font2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbAtleta"
+							"text": "Atleta"
+							"font": #Font4
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "boxAtleta"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbbarco2"
+							"text": "Classificacao"
+							"font": #SwingDerivedFont0
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spClassificacao"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lbCriadoSucessoResultado"
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card2"
@@ -179,12 +316,12 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbListarResultado"
 							"text": "Listar Resultado"
-							"font": #Font2
+							"font": #Font3
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbProvaListar"
 							"text": "Prova"
-							"font": #Font3
+							"font": #Font4
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "boxProvaListar"

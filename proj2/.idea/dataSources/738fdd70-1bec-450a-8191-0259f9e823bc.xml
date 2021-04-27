@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1619257200</StartupTime>
+      <StartupTime>1619510532</StartupTime>
     </root>
     <database id="2" parent="1" name="P2">
       <ObjectId>17664</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>655</IntrospectionStateNumber>
+      <IntrospectionStateNumber>664</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17665|17667|1
 sequence|table|17673|17675|1
@@ -876,7 +876,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>656</IntrospectionStateNumber>
+      <IntrospectionStateNumber>665</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -1074,7 +1074,7 @@ UC/10
     <table id="47" parent="17" name="prova">
       <ObjectId>17728</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>645</StateNumber>
+      <StateNumber>663</StateNumber>
     </table>
     <table id="48" parent="17" name="prova_atleta_barco">
       <ObjectId>17804</ObjectId>
@@ -1516,19 +1516,19 @@ UC/10
     </column>
     <column id="109" parent="47" name="hora">
       <Position>5</Position>
-      <DataType>time|0s</DataType>
-      <StateNumber>642</StateNumber>
-      <TypeId>1083</TypeId>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>662</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="110" parent="47" name="dataDia">
+    <column id="110" parent="47" name="datadia">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
-      <StateNumber>645</StateNumber>
-      <TypeId>1082</TypeId>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>663</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <index id="111" parent="47" name="prova_pkey">
       <ObjectId>17732</ObjectId>
-      <StateNumber>602</StateNumber>
+      <StateNumber>663</StateNumber>
       <ColNames>id_prova</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
