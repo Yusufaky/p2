@@ -28,13 +28,13 @@ public class FederacaoAcoes extends JFrame {
     private void PopulateTableAnswer() {
         List<Resultados> allDados = Resultados.readAll();
 
-        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Classificacao", "Prova", "Atleta"}, 0);
+        DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Classificacao", "Prova", "Atleta", "Tempo"}, 0);
         //Adiciona os medicamentos na tablela
         try {
 
             for (Resultados data : allDados) {
                 System.out.println(data.getClassificacao());
-                model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getNome()});
+                model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getNome(), data.gettempo()});
             }
 
             tbAddResultado.setModel(model_d);
@@ -95,6 +95,7 @@ public class FederacaoAcoes extends JFrame {
                 System.out.println(data.getClassificacao());
 
                 boxProva.addItem(data.getClassificacao());
+                boxProvaListar.addItem(data.getClassificacao());
 
             }
 
@@ -164,6 +165,7 @@ public class FederacaoAcoes extends JFrame {
         panel2.repaint();
         panel2.revalidate();
         PopulateTableAnswer();
+
     }
 
 
@@ -341,12 +343,13 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-            border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER
-            , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
-            .BOLD ,12 ), java. awt. Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (
-            new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r"
-            .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            panelFederacao.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
+            swing.border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border
+            .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog"
+            ,java.awt.Font.BOLD,12),java.awt.Color.red),panelFederacao. getBorder
+            ()));panelFederacao. addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
+            .beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException
+            ();}});
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -486,13 +489,13 @@ public class FederacaoAcoes extends JFrame {
                     lbHora.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 
                     //---- spCriarAno ----
-                    spCriarAno.setModel(new SpinnerListModel(new String[] {"2021", "2022"}));
+                    spCriarAno.setModel(new SpinnerNumberModel(2021, 2021, 2025, 1));
 
                     //---- spCriarMes ----
-                    spCriarMes.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+                    spCriarMes.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 
                     //---- spCriarDias ----
-                    spCriarDias.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+                    spCriarDias.setModel(new SpinnerNumberModel(1, 1, 31, 1));
 
                     //---- spCriarHoras ----
                     spCriarHoras.setModel(new SpinnerListModel(new String[] {"08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30"}));
@@ -535,7 +538,7 @@ public class FederacaoAcoes extends JFrame {
                                     .addGroup(panelCriarProvaLayout.createSequentialGroup()
                                         .addGap(360, 360, 360)
                                         .addComponent(lbCriarProvaSucesso)))
-                                .addContainerGap(157, Short.MAX_VALUE))
+                                .addContainerGap(177, Short.MAX_VALUE))
                     );
                     panelCriarProvaLayout.setVerticalGroup(
                         panelCriarProvaLayout.createParallelGroup()
@@ -748,7 +751,7 @@ public class FederacaoAcoes extends JFrame {
             panelFederacao.setLayout(panelFederacaoLayout);
             panelFederacaoLayout.setHorizontalGroup(
                 panelFederacaoLayout.createParallelGroup()
-                    .addComponent(panel2, GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                    .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelFederacaoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnCriarProvaPAG)

@@ -12,9 +12,8 @@ public class Resultados {
     private int id_resultado;
     private String Classificacao;
     private int id_prova;
-    private int id_atleta;
+    private String tempo;
     private String nome;
-
 
 
     Resultados() {
@@ -32,9 +31,10 @@ public class Resultados {
         return id_prova;
     }
 
-    public int getId_atleta() {
-        return id_atleta;
+    public String gettempo() {
+        return tempo;
     }
+
     public String getNome() {
         return nome;
     }
@@ -52,7 +52,11 @@ public class Resultados {
     }
 
     public void setNome(String nome) {
-        this.nome = nome; }
+        this.nome = nome;
+    }
+    public void setTempo(String tempo) {
+        this.tempo = tempo;
+    }
 
   /*  //GOOD
     public void create() {
@@ -95,7 +99,7 @@ public class Resultados {
     public static List<Resultados> readAll() {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT resultado.id_resultado, resultado.classificacao, resultado.id_prova, resultado.id_atleta, atleta.nome FROM resultado INNER JOIN atleta on resultado.id_atleta = atleta.id_atleta ";
+        String sqlCommand = "SELECT resultado.id_resultado, resultado.classificacao, resultado.id_prova, resultado.id_atleta, atleta.nome, resultado.tempo FROM resultado INNER JOIN atleta on resultado.id_atleta = atleta.id_atleta ";
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -112,16 +116,19 @@ public class Resultados {
                 if (rs.getString("id_prova") != null) cli.setId_prova(rs.getInt("id_prova"));
                 //
                 if (rs.getString("nome") != null) cli.setNome(rs.getString("nome"));
+                //
+                if (rs.getString("tempo") != null) cli.setTempo(rs.getString("tempo"));
 
                 lista.add(cli);
             }
 
         } catch (SQLException ex) {
-          //  System.out.println("ERRO: " + ex.getMessage());
+            //  System.out.println("ERRO: " + ex.getMessage());
         }
 
         return lista;
     }
+
     public static List<Resultados> federacao() {
         Connection conn = Util.criarConexao();
 
@@ -150,6 +157,7 @@ public class Resultados {
 
         return lista;
     }
+
     public static List<Resultados> prova() {
         Connection conn = Util.criarConexao();
 
@@ -178,6 +186,7 @@ public class Resultados {
 
         return lista;
     }
+
     public static List<Resultados> alteta() {
         Connection conn = Util.criarConexao();
 
@@ -201,16 +210,16 @@ public class Resultados {
             }
 
         } catch (SQLException ex) {
-           // System.out.println("ERRO: " + ex.getMessage());
+            // System.out.println("ERRO: " + ex.getMessage());
         }
 
         return lista;
     }
+
     public static List<Resultados> barco() {
         Connection conn = Util.criarConexao();
 
         String sqlCommand = "SELECT barco.id_barco, barco.id_catbarco , catbarco.nome FROM barco INNER JOIN catbarco ON barco.id_catbarco= catbarco.id_catbarco ";
-
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -230,11 +239,12 @@ public class Resultados {
             }
 
         } catch (SQLException ex) {
-           // System.out.println("ERRO: " + ex.getMessage());
+            // System.out.println("ERRO: " + ex.getMessage());
         }
 
         return lista;
     }
+
     public static List<Resultados> categoria() {
         Connection conn = Util.criarConexao();
 
@@ -264,12 +274,14 @@ public class Resultados {
         return lista;
     }
 
-    public static boolean insert(String federacao, String categoria,String ano,String mes,String dias, String horas) {
+    public static boolean insert(String federacao, String categoria, String ano, String mes, String dias, String horas) {
         Connection conn = Util.criarConexao();
+        int cat_id = 0;
+        int fed_id = 0;
 
         String sqlCat = "SELECT id_catprova FROM catprova where descricao = ? ";
         String sqlFed = "SELECT id_federacao FROM federacao where nome = ?  ";
-        String sqlInsert =  "INSERT INTO prova (id_catprova, id_federacao, hora, datadia)  values ( ?, ?, ?,?)";
+        String sqlInsert = "INSERT INTO prova (id_catprova, id_federacao, hora, datadia)  values ( ?, ?, ?,?)";
 
         boolean inserido = true;
 
@@ -283,36 +295,30 @@ public class Resultados {
             ResultSet rsc = stc.executeQuery();
 
             while (rsf.next()) {
-                int fed_id = rsf.getInt("id_federacao");
+                fed_id = rsf.getInt("id_federacao");
 
 
-               System.out.println("Teste id_ federacap:"  + fed_id);
+                System.out.println("Teste id_ federacap:" + fed_id);
             }
             while (rsc.next()) {
-                  int cat_id = rsc.getInt("id_catprova");
+                cat_id = rsc.getInt("id_catprova");
 
 
-                System.out.println("Teste id_cat:"  + cat_id);
+                System.out.println("Teste id_cat:" + cat_id);
             }
 
         } catch (SQLException ex) {
             System.out.println("ERRO: " + ex.getMessage());
         }
 
-        String data= ano +"-"+mes+"-"+dias;
-       int teste = 1;
-        int teste1 = 1;
+        String data = ano + "-" + mes + "-" + dias;
         try {
             PreparedStatement sti = conn.prepareStatement(sqlInsert);
-            sti.setInt(1, teste);
-            sti.setInt(2, teste1);
+            sti.setInt(1, cat_id);
+            sti.setInt(2, fed_id);
             sti.setString(3, horas);
             sti.setString(4, data);
             sti.executeUpdate();
-
-
-
-
 
 
         } catch (SQLException ex) {
@@ -320,21 +326,23 @@ public class Resultados {
             inserido = false;
         }
 
-       // System.out.println(" isnert: " +federacao + " "+ categoria+ " "+data+" " + horas);
+        // System.out.println(" isnert: " +federacao + " "+ categoria+ " "+data+" " + horas);
 
         return inserido;
     }
 
 
     //ADICIONAR RESULTADOS
-    public static boolean insertResultado(String atleta, String prova,String tempo,String barco,String classificacao) {
+    public static boolean insertResultado(String atleta, String prova, String tempo, String barco, String classificacao) {
         int atleta_id = 0;
         int prova_id = 0;
+        int barco_id = 0;
         Connection conn = Util.criarConexao();
 
         String sqlProv = "SELECT id_catprova FROM catprova where descricao = ?";
         String sqlAtl = "SELECT id_atleta FROM atleta where nome = ?  ";
-        String sqlInsert =  "INSERT INTO resultado (classificacao, id_prova, id_atleta, tempo)  values ( ?, ?, ?,?)";
+        String sqlBarco = "SELECT id_catbarco FROM catbarco where nome = ?";
+        String sqlInsert = "INSERT INTO resultado (classificacao, id_prova, id_atleta, tempo, id_barco)  values ( ?, ?, ?,?,?)";
 
         boolean inserido = true;
 
@@ -344,22 +352,28 @@ public class Resultados {
 
             PreparedStatement stc = conn.prepareStatement(sqlProv);
             stc.setString(1, prova);
-            System.out.println("ID_PROVA:"  + stc);
+
+            PreparedStatement stb = conn.prepareStatement(sqlBarco);
+            stb.setString(1, barco);
 
             ResultSet rsf = stf.executeQuery();
             ResultSet rsc = stc.executeQuery();
+            ResultSet rsb = stb.executeQuery();
+
 
             while (rsf.next()) {
                 atleta_id = rsf.getInt("id_atleta");
 
-
-                System.out.println("ID_ATELTA:"  + atleta_id);
             }
             while (rsc.next()) {
-                  prova_id = rsc.getInt("id_catprova");
+                prova_id = rsc.getInt("id_catprova");
+
+            }
+            while (rsb.next()) {
+                barco_id = rsb.getInt("id_catbarco");
 
 
-                System.out.println("Teste id_prova:"  + prova_id);
+                System.out.println("Teste id_barco:" + barco_id);
             }
 
         } catch (SQLException ex) {
@@ -367,15 +381,15 @@ public class Resultados {
         }
 
         //System.out.println("ERRO: "+data);
-       int teste = 1;
+        int teste = 1;
         try {
             PreparedStatement sti = conn.prepareStatement(sqlInsert);
             sti.setString(1, classificacao);
             sti.setInt(2, prova_id);
             sti.setInt(3, atleta_id);
             sti.setString(4, tempo);
+            sti.setInt(5, barco_id);
             sti.executeUpdate();
-
 
 
         } catch (SQLException ex) {
@@ -383,7 +397,7 @@ public class Resultados {
             inserido = false;
         }
 
-        System.out.println(" O insert dos resultados foi isnert:" +atleta_id + " "+prova_id+ " "+tempo+" " + barco+ " "+ classificacao);
+        //System.out.println(" O insert dos resultados foi isnert:" + atleta_id + " " + prova_id + " " + tempo + " " + barco_id + " " + classificacao);
         return inserido;
 
     } //ADICIONAR RESULTADOS

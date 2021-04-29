@@ -9,7 +9,7 @@ new FormModel {
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {comp panel2::l::763:x, seq l {space :::p, comp btnCriarProvaPAG:::p::p, par l {seq l {space :::p, comp btnAddResultadoPAG:::p::p, space :::p, comp btnListarResultadosPAG:::p::p, space :::x, comp btnLogOutPAG:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
+				"$horizontalGroup": "par l {comp panel2::l:::x, seq l {space :::p, comp btnCriarProvaPAG:::p::p, par l {seq l {space :::p, comp btnAddResultadoPAG:::p::p, space :::p, comp btnListarResultadosPAG:::p::p, space :::x, comp btnLogOutPAG:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
 				"$verticalGroup": "par l {seq {space :::x, comp lbBemVindo:::p::p, space :::p, par b {comp btnCriarProvaPAG::b:p::p, comp btnLogOutPAG::b:p::p, comp btnAddResultadoPAG::b:p::p, comp btnListarResultadosPAG::b:p::p}, space :::p, comp panel2:::p:484:p, space :::p}}"
 			} ) {
 				name: "panelFederacao"
@@ -88,7 +88,7 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, comp lbData::l:p::p, comp lbHora::l:p::p}, par l {seq l {space :p:95:p, comp spCriarHoras:::p::p}, seq l {space :p:94:p, par l:::p {seq l {comp spCriarAno:::p::p, space s:::p, comp spCriarMes:::p::p, space u:::p, comp spCriarDias:::p::p}, comp boxCategoria::l:::x, comp boxFederacao::l:::x}}}}, seq l {space :p:291:p, comp btnCriarProva:::p::p}, seq l {space :p:360:p, comp lbCriarProvaSucesso:::p::p}}, space ::157:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, comp lbData::l:p::p, comp lbHora::l:p::p}, par l {seq l {space :p:95:p, comp spCriarHoras:::p::p}, seq l {space :p:94:p, par l:::p {seq l {comp spCriarAno:::p::p, space s:::p, comp spCriarMes:::p::p, space u:::p, comp spCriarDias:::p::p}, comp boxCategoria::l:::x, comp boxFederacao::l:::x}}}}, seq l {space :p:291:p, comp btnCriarProva:::p::p}, seq l {space :p:360:p, comp lbCriarProvaSucesso:::p::p}}, space ::177:x}}"
 						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:23:p, par b {comp lbData::b:p::p, comp spCriarAno::b:p::p, comp spCriarMes::b:p::p, comp spCriarDias::b:p::p}, space s:::p, par b {comp lbHora::b:p::p, comp spCriarHoras::b:p::p}, space :p:21:p, comp lbCriarProvaSucesso:::p::p, space s:::p, comp btnCriarProva:::p::p, space ::97:x}}"
 					} ) {
 						name: "panelCriarProva"
@@ -134,69 +134,15 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JSpinner" ) {
 							name: "spCriarAno"
-							"model": new javax.swing.SpinnerListModel {
-								list: new java.util.ArrayList {
-									add( "2021" )
-									add( "2022" )
-								}
-							}
+							"model": new javax.swing.SpinnerNumberModel( 2021, 2021, 2025, 1 )
 						} )
 						add( new FormComponent( "javax.swing.JSpinner" ) {
 							name: "spCriarMes"
-							"model": new javax.swing.SpinnerListModel {
-								list: new java.util.ArrayList {
-									add( "1" )
-									add( "2" )
-									add( "3" )
-									add( "4" )
-									add( "5" )
-									add( "6" )
-									add( "7" )
-									add( "8" )
-									add( "9" )
-									add( "10" )
-									add( "11" )
-									add( "12" )
-								}
-							}
+							"model": new javax.swing.SpinnerNumberModel( 1, 1, 12, 1 )
 						} )
 						add( new FormComponent( "javax.swing.JSpinner" ) {
 							name: "spCriarDias"
-							"model": new javax.swing.SpinnerListModel {
-								list: new java.util.ArrayList {
-									add( "1" )
-									add( "2" )
-									add( "3" )
-									add( "4" )
-									add( "5" )
-									add( "6" )
-									add( "7" )
-									add( "8" )
-									add( "9" )
-									add( "10" )
-									add( "11" )
-									add( "12" )
-									add( "13" )
-									add( "14" )
-									add( "15" )
-									add( "16" )
-									add( "17" )
-									add( "18" )
-									add( "19" )
-									add( "20" )
-									add( "21" )
-									add( "22" )
-									add( "23" )
-									add( "24" )
-									add( "25" )
-									add( "26" )
-									add( "27" )
-									add( "28" )
-									add( "29" )
-									add( "30" )
-									add( "31" )
-								}
-							}
+							"model": new javax.swing.SpinnerNumberModel( 1, 1, 31, 1 )
 						} )
 						add( new FormComponent( "javax.swing.JSpinner" ) {
 							name: "spCriarHoras"
