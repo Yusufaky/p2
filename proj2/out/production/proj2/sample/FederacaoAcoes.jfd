@@ -88,8 +88,8 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, comp lbData::l:p::p, comp lbHora::l:p::p}, par l {seq l {space :p:95:p, comp spCriarHoras:::p::p}, seq l {space :p:94:p, par l:::p {seq l {comp spCriarAno:::p::p, space s:::p, comp spCriarMes:::p::p, space u:::p, comp spCriarDias:::p::p}, comp boxCategoria::l:::x, comp boxFederacao::l:::x}}}}, seq l {space :p:291:p, comp btnCriarProva:::p::p}, seq l {space :p:360:p, comp lbCriarProvaSucesso:::p::p}}, space ::177:x}}"
-						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space :p:23:p, par b {comp lbData::b:p::p, comp spCriarAno::b:p::p, comp spCriarMes::b:p::p, comp spCriarDias::b:p::p}, space s:::p, par b {comp lbHora::b:p::p, comp spCriarHoras::b:p::p}, space :p:21:p, comp lbCriarProvaSucesso:::p::p, space s:::p, comp btnCriarProva:::p::p, space ::97:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:319:p, comp lbCriarProva:::p::p}, seq l {space :p:103:p, par l {par l:l::p {comp lbCategoria:::::x, comp lbFederacao:::p::p}, comp lbData::l:p::p, comp lbHora::l:p::p}, par l {seq l {space :p:95:p, comp spCriarHoras:::p::p}, seq l {space :p:94:p, par l:::p {seq l {space :p:28:p, comp spCriarAno:::p::p, space s:::p, comp spCriarMes:::p::p, space u:::p, comp spCriarDias:::p::p}, comp boxCategoria::l:::x, comp boxFederacao::l:::x, seq l {space :p:60:p, comp label2:::p::p, space :p:75:p, comp label3:::p::p, space :::x, comp label5:::p::p, space :p:35:p}}}}}, seq l {space :p:291:p, comp btnCriarProva:::p::p}, seq l {space :p:360:p, comp lbCriarProvaSucesso:::p::p}}, space ::143:x}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp lbCriarProva:::p:49:p, space :p:32:p, par b {comp lbFederacao::b:p::p, comp boxFederacao::b:p::p}, space :p:32:p, par b {comp lbCategoria::b:p::p, comp boxCategoria::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp label3::b:p::p, comp label5::b:p::p}, space :::p, par b {comp lbData::b:p::p, comp spCriarAno::b:p::p, comp spCriarMes::b:p::p, comp spCriarDias::b:p::p}, space s:::p, par b {comp lbHora::b:p::p, comp spCriarHoras::b:p::p}, space :p:21:p, comp lbCriarProvaSucesso:::p::p, space s:::p, comp btnCriarProva:::p::p, space ::86:x}}"
 					} ) {
 						name: "panelCriarProva"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -178,6 +178,18 @@ new FormModel {
 									add( "21:30" )
 								}
 							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label2"
+							"text": "Ano"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label3"
+							"text": "Mês"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label5"
+							"text": "Dia"
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
@@ -393,8 +405,8 @@ new FormModel {
 						"value": "card2"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:270:p, comp lbListarResultado:::p::p}, seq l {space :p:180:p, comp lbProvaListar:::p::p, space :144:144:p, comp boxProvaListar:::p:171:p}}, space ::204:x}, seq t {space :0:165:x, comp scrollPane1:::p::p, space :p:146:p}}"
-						"$verticalGroup": "par l {seq l {space :p:23:p, comp lbListarResultado:::p:49:p, space :p:33:p, par l {comp lbProvaListar:::p::p, comp boxProvaListar:::p::p}, space :p:28:p, comp scrollPane1:::p:248:p, space ::67:x}}"
+						"$horizontalGroup": "par l {seq {space :p:270:p, comp lbListarResultado:::p::p, space ::284:x}, seq t {par t {seq {space :p:180:p, comp lbProvaListar:::p::p, space :p:97:p, comp boxProvaListar:::p:171:p, space ::25:x, comp btnAtualizarTabela:::p::p}, seq {space :0:165:x, comp scrollPane1:::p::p}}, space :p:146:p}}"
+						"$verticalGroup": "par l {seq l {space :p:23:p, comp lbListarResultado:::p:49:p, space :p:33:p, par l {comp lbProvaListar:::p::p, par b {comp boxProvaListar::b:p::p, comp btnAtualizarTabela::b:p::p}}, space :p:28:p, comp scrollPane1:::p:248:p, space ::67:x}}"
 					} ) {
 						name: "panelListarResultados"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -415,6 +427,11 @@ new FormModel {
 							add( new FormComponent( "javax.swing.JTable" ) {
 								name: "tbAddResultado"
 							} )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnAtualizarTabela"
+							"text": "Atualizar"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAtualizarTabelaActionPerformed", true ) )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card4"
