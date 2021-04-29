@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1619510532</StartupTime>
+      <StartupTime>1619619188</StartupTime>
     </root>
     <database id="2" parent="1" name="P2">
       <ObjectId>17664</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>664</IntrospectionStateNumber>
+      <IntrospectionStateNumber>679</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17665|17667|1
 sequence|table|17673|17675|1
@@ -876,7 +876,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>665</IntrospectionStateNumber>
+      <IntrospectionStateNumber>680</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -1084,7 +1084,7 @@ UC/10
     <table id="49" parent="17" name="resultado">
       <ObjectId>17788</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>602</StateNumber>
+      <StateNumber>678</StateNumber>
     </table>
     <table id="50" parent="17" name="tipoutilizador">
       <ObjectId>17704</ObjectId>
@@ -1661,7 +1661,13 @@ id_barco</ColNames>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="127" parent="49" name="resultado_pkey">
+    <column id="127" parent="49" name="tempo">
+      <Position>5</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>678</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="128" parent="49" name="resultado_pkey">
       <ObjectId>17792</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_resultado</ColNames>
@@ -1671,14 +1677,14 @@ id_barco</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="128" parent="49" name="resultado_pkey">
+    <key id="129" parent="49" name="resultado_pkey">
       <ObjectId>17793</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_resultado</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>resultado_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="129" parent="49" name="fk_prova">
+    <foreign-key id="130" parent="49" name="fk_prova">
       <ObjectId>17794</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_prova</ColNames>
@@ -1688,7 +1694,7 @@ id_barco</ColNames>
       <RefKeyName>prova_pkey</RefKeyName>
       <RefColNames>id_prova</RefColNames>
     </foreign-key>
-    <foreign-key id="130" parent="49" name="fk_atleta">
+    <foreign-key id="131" parent="49" name="fk_atleta">
       <ObjectId>17799</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_atleta</ColNames>
@@ -1698,7 +1704,7 @@ id_barco</ColNames>
       <RefKeyName>atleta_pkey</RefKeyName>
       <RefColNames>id_atleta</RefColNames>
     </foreign-key>
-    <column id="131" parent="50" name="id_tipoutilizador">
+    <column id="132" parent="50" name="id_tipoutilizador">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1706,13 +1712,13 @@ id_barco</ColNames>
       <DefaultExpression>nextval(&apos;tipoutilizador_id_tipoutilizador_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="132" parent="50" name="tipo">
+    <column id="133" parent="50" name="tipo">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="133" parent="50" name="tipoutilizador_pkey">
+    <index id="134" parent="50" name="tipoutilizador_pkey">
       <ObjectId>17708</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_tipoutilizador</ColNames>
@@ -1722,7 +1728,7 @@ id_barco</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="134" parent="50" name="tipoutilizador_pkey">
+    <key id="135" parent="50" name="tipoutilizador_pkey">
       <ObjectId>17709</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_tipoutilizador</ColNames>

@@ -9,7 +9,7 @@ new FormModel {
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {comp panel2::l:::x, seq l {space :::p, comp btnCriarProvaPAG:::p::p, par l {seq l {space :::p, comp btnAddResultadoPAG:::p::p, space :::p, comp btnListarResultadosPAG:::p::p, space :::x, comp btnLogOutPAG:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
+				"$horizontalGroup": "par l {comp panel2::l::763:x, seq l {space :::p, comp btnCriarProvaPAG:::p::p, par l {seq l {space :::p, comp btnAddResultadoPAG:::p::p, space :::p, comp btnListarResultadosPAG:::p::p, space :::x, comp btnLogOutPAG:::p::p, space :p:16:p}, seq {space :::x, comp lbBemVindo:::p::p, space :p:293:p}}}}"
 				"$verticalGroup": "par l {seq {space :::x, comp lbBemVindo:::p::p, space :::p, par b {comp btnCriarProvaPAG::b:p::p, comp btnLogOutPAG::b:p::p, comp btnAddResultadoPAG::b:p::p, comp btnListarResultadosPAG::b:p::p}, space :::p, comp panel2:::p:484:p, space :::p}}"
 			} ) {
 				name: "panelFederacao"
@@ -237,8 +237,8 @@ new FormModel {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:162:p, par l {comp lbProva:::p::p, comp lbTempo::l:p::p, comp lbbarco::l:p::p, comp lbbarco2::l:p::p, comp lbAtleta:::p::p}, space :66:66:p, par l:::p {comp boxAtleta::::171:x, comp boxProva::l::171:x, comp txtTempo::l::171:x, comp boxBarco::l::171:x, comp spClassificacao::l::171:x}, space ::222:x}, seq t {space ::252:x, par l {seq t {comp lbaddResultado:::p::p, space :p:246:p}, seq t {comp btnResultadoADD:::p::p, space :p:201:p}, seq t {comp lbCriadoSucessoResultado:::p::p, space :p:319:p}}}}"
-						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :::p, par l {comp boxAtleta:::p::p, comp lbAtleta:::p::p}, space :p:18:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, par l {seq {space :p:21:p, comp lbTempo:::p::p}, seq l {space s:::p, comp txtTempo:::p::p}}, space :p:21:p, par l {comp boxBarco:::p::p, comp lbbarco:::p::p}, space s:::p, par b {comp lbbarco2::b:p::p, comp spClassificacao::b:p::p}, space ::45:x, comp lbCriadoSucessoResultado:::p::p, space u:::p, comp btnResultadoADD:::p::p, space :p:50:p}}"
+						"$horizontalGroup": "par l {seq l {space :p:162:p, par l {comp lbProva:::p::p, comp lbbarco::l:p::p, comp lbbarco2::l:p::p, comp lbAtleta:::p::p, comp lbTempo:::p::p}, space ::63:x, par l:::p {comp boxAtleta:::::x, comp boxProva::l:::x, comp boxBarco::l:::x, comp spClassificacao::l:::x, seq t {comp spTempoMin:::p::p, space :::x, comp label1:::p::p, space u:::p, comp spTempoSec:::p::p}}, space ::197:x}, seq t {space ::252:x, par l {seq t {comp lbaddResultado:::p::p, space :p:246:p}, seq t {comp btnResultadoADD:::p::p, space :p:201:p}, seq t {comp lbCriadoSucessoResultado:::p::p, space :p:319:p}}}}"
+						"$verticalGroup": "par l {seq l {space :p:21:p, comp lbaddResultado:::p:49:p, space :::p, par l {comp boxAtleta:::p::p, comp lbAtleta:::p::p}, space :p:18:p, par l {comp lbProva:::p::p, comp boxProva:::p::p}, space :p:21:p, par t {comp lbTempo:::p::p, par b {comp spTempoSec::b:p::p, comp spTempoMin::b:p::p, comp label1::b:p::p}}, space :p:21:p, par l {comp boxBarco:::p::p, comp lbbarco:::p::p}, space s:::p, par b {comp lbbarco2::b:p::p, comp spClassificacao::b:p::p}, space ::44:x, comp lbCriadoSucessoResultado:::p::p, space u:::p, comp btnResultadoADD:::p::p, space :p:50:p}}"
 					} ) {
 						name: "paneladdResultado"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -266,9 +266,6 @@ new FormModel {
 							name: "lbTempo"
 							"text": "Tempo"
 							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
-						} )
-						add( new FormComponent( "javax.swing.JTextField" ) {
-							name: "txtTempo"
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnResultadoADD"
@@ -306,6 +303,145 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbCriadoSucessoResultado"
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spTempoSec"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "0" )
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+									add( "9" )
+									add( "10" )
+									add( "11" )
+									add( "12" )
+									add( "13" )
+									add( "14" )
+									add( "15" )
+									add( "16" )
+									add( "17" )
+									add( "18" )
+									add( "19" )
+									add( "20" )
+									add( "21" )
+									add( "22" )
+									add( "23" )
+									add( "24" )
+									add( "25" )
+									add( "26" )
+									add( "27" )
+									add( "28" )
+									add( "29" )
+									add( "30" )
+									add( "31" )
+									add( "32" )
+									add( "33" )
+									add( "34" )
+									add( "35" )
+									add( "36" )
+									add( "37" )
+									add( "38" )
+									add( "39" )
+									add( "40" )
+									add( "41" )
+									add( "42" )
+									add( "43" )
+									add( "44" )
+									add( "45" )
+									add( "46" )
+									add( "47" )
+									add( "48" )
+									add( "49" )
+									add( "50" )
+									add( "51" )
+									add( "52" )
+									add( "53" )
+									add( "54" )
+									add( "55" )
+									add( "56" )
+									add( "57" )
+									add( "58" )
+									add( "59" )
+								}
+								value: "1"
+							}
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spTempoMin"
+							"model": new javax.swing.SpinnerListModel {
+								list: new java.util.ArrayList {
+									add( "1" )
+									add( "2" )
+									add( "3" )
+									add( "4" )
+									add( "5" )
+									add( "6" )
+									add( "7" )
+									add( "8" )
+									add( "9" )
+									add( "10" )
+									add( "11" )
+									add( "12" )
+									add( "13" )
+									add( "14" )
+									add( "15" )
+									add( "16" )
+									add( "17" )
+									add( "18" )
+									add( "19" )
+									add( "20" )
+									add( "21" )
+									add( "22" )
+									add( "23" )
+									add( "24" )
+									add( "25" )
+									add( "26" )
+									add( "27" )
+									add( "28" )
+									add( "29" )
+									add( "30" )
+									add( "31" )
+									add( "32" )
+									add( "33" )
+									add( "34" )
+									add( "35" )
+									add( "36" )
+									add( "37" )
+									add( "38" )
+									add( "39" )
+									add( "40" )
+									add( "41" )
+									add( "42" )
+									add( "43" )
+									add( "44" )
+									add( "45" )
+									add( "46" )
+									add( "47" )
+									add( "48" )
+									add( "49" )
+									add( "50" )
+									add( "51" )
+									add( "52" )
+									add( "53" )
+									add( "54" )
+									add( "55" )
+									add( "56" )
+									add( "57" )
+									add( "58" )
+									add( "59" )
+								}
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label1"
+							"text": ":"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 13, false )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card2"

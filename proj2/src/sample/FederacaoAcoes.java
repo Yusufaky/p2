@@ -40,7 +40,7 @@ public class FederacaoAcoes extends JFrame {
             tbAddResultado.setModel(model_d);
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+            //System.out.println("Sem Resultados..");
         }
     }
     private void DropDownFederacao(){
@@ -60,10 +60,9 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+            //System.out.println("Sem Resultados..");
         }
-        System.out.println("teste" + boxFederacao.getSelectedItem()
-        );
+       // System.out.println("teste" + boxFederacao.getSelectedItem());
 
     }
     private void DropDownCategoria(){
@@ -81,14 +80,14 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+          //  System.out.println("Sem Resultados..");
         }
-        System.out.println("teste" + boxCategoria.getSelectedItem()
-        );
+      //  System.out.println("teste" + boxCategoria.getSelectedItem());
 
     }
     private void DropDownProva(){
-        List<Resultados> allDados = Resultados.prova();
+        List<Resultados> allDados = Resultados.categoria();
+
 
         try {
 
@@ -96,17 +95,14 @@ public class FederacaoAcoes extends JFrame {
                 System.out.println(data.getClassificacao());
 
                 boxProva.addItem(data.getClassificacao());
-                boxProvaListar.addItem(data.getClassificacao());
 
             }
 
-
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+          //  System.out.println("Sem Resultados..");
         }
-        System.out.println("teste" + boxFederacao.getSelectedItem()
-        );
+      //  System.out.println("teste" + boxCategoria.getSelectedItem());
 
     }
     private void DropDownAtleta(){
@@ -115,7 +111,7 @@ public class FederacaoAcoes extends JFrame {
         try {
 
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
+              //  System.out.println(data.getClassificacao());
 
                 boxAtleta.addItem(data.getClassificacao());
 
@@ -125,7 +121,7 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+           // System.out.println("Sem Resultados..");
         }
         System.out.println("teste" + boxFederacao.getSelectedItem()
         );
@@ -146,10 +142,9 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-            System.out.println("Sem Resultados..");
+          //  System.out.println("Sem Resultados..");
         }
-        System.out.println("teste" + boxBarco.getSelectedItem()
-        );
+      //  System.out.println("teste" + boxBarco.getSelectedItem());
 
     }
 
@@ -233,14 +228,13 @@ public class FederacaoAcoes extends JFrame {
                 DropDownBarco();
                 DropDownAtleta();
             } else {
-                System.out.println("ERRO: "
-                );
+                //System.out.println("ERRO: ");
                 errologin.setText("Erro a efetuar o login");
             }
 
 
         } catch (SQLException ex) {
-            System.out.println("ERRO: " + ex.getMessage());
+           // System.out.println("ERRO: " + ex.getMessage());
         }
     }
 
@@ -271,15 +265,18 @@ public class FederacaoAcoes extends JFrame {
     private void btnResultadoADD(ActionEvent e) {
          String atleta = boxAtleta.getSelectedItem().toString();
          String prova = boxProva.getSelectedItem().toString();
-         String tempo  = txtTempo.toString();
+         String minutos  = spTempoMin.getValue().toString();
+         String segundos  = spTempoSec.getValue().toString();
          String barco  = boxBarco.getSelectedItem().toString();
         String classificacao  = spClassificacao.getValue().toString();
 
-       /* if (Resultados.insertResultado(atleta,prova,tempo,barco,classificacao) == true){
+        String tempo= minutos+":"+segundos;
+
+        if (Resultados.insertResultado(atleta,prova,tempo,barco,classificacao) == true){
             lbCriadoSucessoResultado.setText("Sucesso");
         }else{
             lbCriadoSucessoResultado.setText("Falhou");
-        };*/
+        };
       // System.out.println(fed + " "+ cat+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
 
     }
@@ -323,13 +320,15 @@ public class FederacaoAcoes extends JFrame {
         lbProva = new JLabel();
         lbbarco = new JLabel();
         lbTempo = new JLabel();
-        txtTempo = new JTextField();
         btnResultadoADD = new JButton();
         lbAtleta = new JLabel();
         boxAtleta = new JComboBox();
         lbbarco2 = new JLabel();
         spClassificacao = new JSpinner();
         lbCriadoSucessoResultado = new JLabel();
+        spTempoSec = new JSpinner();
+        spTempoMin = new JSpinner();
+        label1 = new JLabel();
         panelListarResultados = new JPanel();
         lbListarResultado = new JLabel();
         lbProvaListar = new JLabel();
@@ -342,12 +341,12 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.
-            EmptyBorder(0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing.border.TitledBorder.CENTER,javax.swing
-            .border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),
-            java.awt.Color.red),panelFederacao. getBorder()));panelFederacao. addPropertyChangeListener(new java.beans.PropertyChangeListener()
-            {@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName()))
-            throw new RuntimeException();}});
+            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+            border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER
+            , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
+            .BOLD ,12 ), java. awt. Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (
+            new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r"
+            .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -605,6 +604,18 @@ public class FederacaoAcoes extends JFrame {
                     //---- spClassificacao ----
                     spClassificacao.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8"}));
 
+                    //---- spTempoSec ----
+                    spTempoSec.setModel(new SpinnerListModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"}) {
+                        { setValue("1"); }
+                    });
+
+                    //---- spTempoMin ----
+                    spTempoMin.setModel(new SpinnerListModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"}));
+
+                    //---- label1 ----
+                    label1.setText(":");
+                    label1.setFont(label1.getFont().deriveFont(label1.getFont().getSize() + 13f));
+
                     GroupLayout paneladdResultadoLayout = new GroupLayout(paneladdResultado);
                     paneladdResultado.setLayout(paneladdResultadoLayout);
                     paneladdResultadoLayout.setHorizontalGroup(
@@ -613,18 +624,23 @@ public class FederacaoAcoes extends JFrame {
                                 .addGap(162, 162, 162)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup()
                                     .addComponent(lbProva)
-                                    .addComponent(lbTempo)
                                     .addComponent(lbbarco)
                                     .addComponent(lbbarco2)
-                                    .addComponent(lbAtleta))
-                                .addGap(66, 66, 66)
+                                    .addComponent(lbAtleta)
+                                    .addComponent(lbTempo))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(boxAtleta, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(boxProva, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(txtTempo, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(boxBarco, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(spClassificacao, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
-                                .addContainerGap(222, Short.MAX_VALUE))
+                                    .addComponent(boxAtleta)
+                                    .addComponent(boxProva)
+                                    .addComponent(boxBarco)
+                                    .addComponent(spClassificacao)
+                                    .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
+                                        .addComponent(spTempoMin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(label1)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(spTempoSec, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(197, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, paneladdResultadoLayout.createSequentialGroup()
                                 .addContainerGap(252, Short.MAX_VALUE)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup()
@@ -651,13 +667,13 @@ public class FederacaoAcoes extends JFrame {
                                 .addGroup(paneladdResultadoLayout.createParallelGroup()
                                     .addComponent(lbProva)
                                     .addComponent(boxProva, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(paneladdResultadoLayout.createParallelGroup()
-                                    .addGroup(paneladdResultadoLayout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(lbTempo))
-                                    .addGroup(paneladdResultadoLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtTempo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addGap(21, 21, 21)
+                                .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbTempo)
+                                    .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(spTempoSec, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(spTempoMin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label1)))
                                 .addGap(21, 21, 21)
                                 .addGroup(paneladdResultadoLayout.createParallelGroup()
                                     .addComponent(boxBarco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -666,7 +682,7 @@ public class FederacaoAcoes extends JFrame {
                                 .addGroup(paneladdResultadoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(lbbarco2)
                                     .addComponent(spClassificacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(lbCriadoSucessoResultado)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnResultadoADD)
@@ -732,7 +748,7 @@ public class FederacaoAcoes extends JFrame {
             panelFederacao.setLayout(panelFederacaoLayout);
             panelFederacaoLayout.setHorizontalGroup(
                 panelFederacaoLayout.createParallelGroup()
-                    .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panel2, GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                     .addGroup(panelFederacaoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnCriarProvaPAG)
@@ -822,13 +838,15 @@ public class FederacaoAcoes extends JFrame {
     private JLabel lbProva;
     private JLabel lbbarco;
     private JLabel lbTempo;
-    private JTextField txtTempo;
     private JButton btnResultadoADD;
     private JLabel lbAtleta;
     private JComboBox boxAtleta;
     private JLabel lbbarco2;
     private JSpinner spClassificacao;
     private JLabel lbCriadoSucessoResultado;
+    private JSpinner spTempoSec;
+    private JSpinner spTempoMin;
+    private JLabel label1;
     private JPanel panelListarResultados;
     private JLabel lbListarResultado;
     private JLabel lbProvaListar;
