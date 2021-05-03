@@ -432,6 +432,8 @@ new FormModel {
 							name: "btnAtualizarTabela"
 							"text": "Atualizar"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAtualizarTabelaActionPerformed", true ) )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAtualizarTabelaAction", true ) )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAtualizarTabelaActionPerformed", true ) )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card4"

@@ -25,24 +25,23 @@ public class FederacaoAcoes extends JFrame {
         initComponents();
     }
 
-    private void PopulateTableAnswer() {
-        List<Resultados> allDados = Resultados.readAll();
+    private void PopulateTableAnswer(String prova) {
+
+        List<Resultados> allDados = Resultados.readAll(prova);
 
         DefaultTableModel model_d = new DefaultTableModel(new Object[]{"ID", "Classificacao", "Prova", "Atleta", "Tempo"}, 0);
-        //Adiciona os medicamentos na tablela
         try {
 
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
                 model_d.addRow(new Object[]{data.getId_Resultado(), data.getClassificacao(), data.getId_prova(), data.getNome(), data.gettempo()});
             }
 
             tbAddResultado.setModel(model_d);
         } catch (
                 IndexOutOfBoundsException error) {
-            //System.out.println("Sem Resultados..");
         }
     }
+
     private void DropDownFederacao(){
 
         List<Resultados> allDados = Resultados.federacao();
@@ -51,7 +50,6 @@ public class FederacaoAcoes extends JFrame {
         try {
 
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
 
                 boxFederacao.addItem(data.getClassificacao());
 
@@ -60,11 +58,10 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-            //System.out.println("Sem Resultados..");
         }
-       // System.out.println("teste" + boxFederacao.getSelectedItem());
 
     }
+
     private void DropDownCategoria(){
         List<Resultados> allDados = Resultados.categoria();
 
@@ -72,7 +69,6 @@ public class FederacaoAcoes extends JFrame {
         try {
 
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
 
                 boxCategoria.addItem(data.getClassificacao());
 
@@ -80,11 +76,10 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-          //  System.out.println("Sem Resultados..");
         }
-      //  System.out.println("teste" + boxCategoria.getSelectedItem());
 
     }
+
     private void DropDownProva(){
         List<Resultados> allDados = Resultados.categoria();
 
@@ -92,28 +87,24 @@ public class FederacaoAcoes extends JFrame {
         try {
 
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
 
                 boxProva.addItem(data.getClassificacao());
-                boxProvaListar.addItem(data.getClassificacao());
 
             }
 
         } catch (
                 IndexOutOfBoundsException error) {
-          //  System.out.println("Sem Resultados..");
         }
-      //  System.out.println("teste" + boxCategoria.getSelectedItem());
 
     }
+
     private void DropDownProvaListar(){
-        List<Resultados> allDados = Resultados.categoria();
+        List<Resultados> provas = Resultados.prova();
 
 
         try {
 
-            for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
+            for (Resultados data : provas) {
 
                 boxProvaListar.addItem(data.getClassificacao());
 
@@ -121,54 +112,33 @@ public class FederacaoAcoes extends JFrame {
 
         } catch (
                 IndexOutOfBoundsException error) {
-          //  System.out.println("Sem Resultados..");
         }
-      //  System.out.println("teste" + boxCategoria.getSelectedItem());
 
     }
+
     private void DropDownAtleta(){
         List<Resultados> allDados = Resultados.alteta();
 
         try {
 
             for (Resultados data : allDados) {
-              //  System.out.println(data.getClassificacao());
-
                 boxAtleta.addItem(data.getClassificacao());
-
-
             }
-
-
         } catch (
                 IndexOutOfBoundsException error) {
-           // System.out.println("Sem Resultados..");
         }
-        System.out.println("teste" + boxFederacao.getSelectedItem()
-        );
-
     }
+
     private void DropDownBarco(){
         List<Resultados> allDados = Resultados.barco();
-
-
         try {
-
             for (Resultados data : allDados) {
-                System.out.println(data.getClassificacao());
-
                 boxBarco.addItem(data.getClassificacao());
-
             }
-
         } catch (
                 IndexOutOfBoundsException error) {
-          //  System.out.println("Sem Resultados..");
         }
-      //  System.out.println("teste" + boxBarco.getSelectedItem());
-
     }
-
 
     private void btnCriarProvaPainel(ActionEvent e) {
         panel2.removeAll();
@@ -184,12 +154,8 @@ public class FederacaoAcoes extends JFrame {
         panel2.add(panelListarResultados);
         panel2.repaint();
         panel2.revalidate();
-        PopulateTableAnswer();
-
 
     }
-
-
 
     private void btnLogOutAcao(ActionEvent e) {
         btnAddResultadoPAG.setVisible(false);
@@ -216,14 +182,9 @@ public class FederacaoAcoes extends JFrame {
 
     private void btnLoginPainel(ActionEvent e) {
         Connection conn = Util.criarConexao();
-
         String sqlCommand = "SELECT username, pass  FROM federacao where username =? and pass=?";
-
         String username = textUserName.getText();
         String password = String.valueOf(textPassword.getPassword());
-        
-
-
         try {
             PreparedStatement st = conn.prepareStatement(sqlCommand);
             st.setString(1, username);
@@ -252,13 +213,9 @@ public class FederacaoAcoes extends JFrame {
                 DropDownAtleta();
                 DropDownProvaListar();
             } else {
-                //System.out.println("ERRO: ");
                 errologin.setText("Erro a efetuar o login");
             }
-
-
         } catch (SQLException ex) {
-           // System.out.println("ERRO: " + ex.getMessage());
         }
     }
 
@@ -278,14 +235,13 @@ public class FederacaoAcoes extends JFrame {
         String dias  = spCriarDias.getValue().toString();
         String horas = spCriarHoras.getValue().toString();
 
-        if (Resultados.insert(fed,cat,ano,mes,dias,horas) == true){
+        if (Resultados.insertProvas(fed,cat,ano,mes,dias,horas) == true){
             lbCriarProvaSucesso.setText("Sucesso");
         }else{
             lbCriarProvaSucesso.setText("Falhou");
         };
-      // System.out.println(fed + " "+ cat+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
-
     }
+
     private void btnResultadoADD(ActionEvent e) {
          String atleta = boxAtleta.getSelectedItem().toString();
          String prova = boxProva.getSelectedItem().toString();
@@ -301,9 +257,19 @@ public class FederacaoAcoes extends JFrame {
         }else{
             lbCriadoSucessoResultado.setText("Falhou");
         };
-      // System.out.println(fed + " "+ cat+ " "  +ano+ " "+ mes + " " + dias+ " " + horas);
+    }
+
+    private void btnAtualizarTabelaActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
+    private void btnAtualizarTabelaAction(ActionEvent e) {
+        String prova = boxProvaListar.getSelectedItem().toString();
+        PopulateTableAnswer(prova);
+        System.out.println("TESTE AQUI EM CIMA NO Atualizar: "+ prova);
 
     }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -369,12 +335,12 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-            border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder. CENTER
-            , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .awt .Font
-            .BOLD ,12 ), java. awt. Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (
-            new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er"
-            .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
+            ( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border
+            . TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
+            . Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
+            propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
+            ; }} );
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
@@ -760,6 +726,11 @@ public class FederacaoAcoes extends JFrame {
 
                     //---- btnAtualizarTabela ----
                     btnAtualizarTabela.setText("Atualizar");
+                    btnAtualizarTabela.addActionListener(e -> {
+			btnAtualizarTabelaActionPerformed(e);
+			btnAtualizarTabelaAction(e);
+			btnAtualizarTabelaActionPerformed(e);
+		});
 
                     GroupLayout panelListarResultadosLayout = new GroupLayout(panelListarResultados);
                     panelListarResultados.setLayout(panelListarResultadosLayout);

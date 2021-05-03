@@ -96,10 +96,28 @@ public class Resultados {
         }
     }*/
 
-    public static List<Resultados> readAll() {
+    public static List<Resultados> readAll(String prova) {
         Connection conn = Util.criarConexao();
+        int idProva = -1;
+        String sqlCat = "SELECT id_prova FROM prova where descricao = ? ";
 
-        String sqlCommand = "SELECT resultado.id_resultado, resultado.classificacao, resultado.id_prova, resultado.id_atleta, atleta.nome, resultado.tempo FROM resultado INNER JOIN atleta on resultado.id_atleta = atleta.id_atleta ";
+        try {
+            PreparedStatement stf = conn.prepareStatement(sqlCat);
+            stf.setString(1, prova);
+            System.out.println("TESTE AQUI EM CIMA NO TRY: " + prova);
+
+            ResultSet rsf = stf.executeQuery();
+            System.out.println("TESTE AQUI EM CIMA NO ResultSet: " + stf);
+
+            while (rsf.next()) {
+                idProva = rsf.getInt("id_prova");
+
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERRO NO CATCH: " + ex.getMessage());
+        }
+
+        String sqlCommand = "SELECT resultado.id_resultado, resultado.classificacao, resultado.id_prova, resultado.id_atleta, atleta.nome, resultado.tempo FROM resultado INNER JOIN atleta on resultado.id_atleta = atleta.id_atleta WHERE resultado.id_prova = "+ idProva;
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -107,8 +125,10 @@ public class Resultados {
         try {
             PreparedStatement st = conn.prepareStatement(sqlCommand);
             ResultSet rs = st.executeQuery();
+
             while (rs.next()) {
                 Resultados cli = new Resultados();
+                System.out.println("TESTE AQUI EM CIMA NO READALL: " + st);
 
                 cli.setId_Resultado(rs.getInt("id_resultado"));
                 if (rs.getString("classificacao") != null) cli.setClassificacao(rs.getString("classificacao"));
@@ -161,7 +181,7 @@ public class Resultados {
     public static List<Resultados> prova() {
         Connection conn = Util.criarConexao();
 
-        String sqlCommand = "SELECT prova.id_prova, prova.id_catprova, catprova.distancia FROM prova INNER JOIN catprova on prova.id_catprova = catprova.id_catprova";
+        String sqlCommand = "SELECT id_prova, id_catprova, descricao FROM prova";
 
 
         List<Resultados> lista = new ArrayList<>();
@@ -173,7 +193,7 @@ public class Resultados {
                 Resultados cli = new Resultados();
 
                 cli.setId_Resultado(rs.getInt("id_prova"));
-                if (rs.getString("distancia") != null) cli.setClassificacao(rs.getString("distancia"));
+                if (rs.getString("descricao") != null) cli.setClassificacao(rs.getString("descricao"));
                 //
 
 
@@ -274,14 +294,14 @@ public class Resultados {
         return lista;
     }
 
-    public static boolean insert(String federacao, String categoria, String ano, String mes, String dias, String horas) {
+    public static boolean insertProvas(String federacao, String categoria, String ano, String mes, String dias, String horas) {
         Connection conn = Util.criarConexao();
         int cat_id = 0;
         int fed_id = 0;
 
         String sqlCat = "SELECT id_catprova FROM catprova where descricao = ? ";
         String sqlFed = "SELECT id_federacao FROM federacao where nome = ?  ";
-        String sqlInsert = "INSERT INTO prova (id_catprova, id_federacao, hora, datadia)  values ( ?, ?, ?,?)";
+        String sqlInsert = "INSERT INTO prova (id_catprova, id_federacao, hora, datadia, descricao)  values ( ?, ?, ?,?, ?)";
 
         boolean inserido = true;
 
@@ -296,15 +316,9 @@ public class Resultados {
 
             while (rsf.next()) {
                 fed_id = rsf.getInt("id_federacao");
-
-
-                System.out.println("Teste id_ federacap:" + fed_id);
             }
             while (rsc.next()) {
                 cat_id = rsc.getInt("id_catprova");
-
-
-                System.out.println("Teste id_cat:" + cat_id);
             }
 
         } catch (SQLException ex) {
@@ -312,22 +326,19 @@ public class Resultados {
         }
 
         String data = ano + "-" + mes + "-" + dias;
+        String descricaoResultado = data + "_" + categoria;
         try {
             PreparedStatement sti = conn.prepareStatement(sqlInsert);
             sti.setInt(1, cat_id);
             sti.setInt(2, fed_id);
             sti.setString(3, horas);
             sti.setString(4, data);
+            sti.setString(5, descricaoResultado);
             sti.executeUpdate();
-
-
         } catch (SQLException ex) {
             System.out.println("ERRO: " + ex.getMessage());
             inserido = false;
         }
-
-        // System.out.println(" isnert: " +federacao + " "+ categoria+ " "+data+" " + horas);
-
         return inserido;
     }
 
@@ -380,8 +391,6 @@ public class Resultados {
             System.out.println("ERRO NO CATCH: " + ex.getMessage());
         }
 
-        //System.out.println("ERRO: "+data);
-        int teste = 1;
         try {
             PreparedStatement sti = conn.prepareStatement(sqlInsert);
             sti.setString(1, classificacao);

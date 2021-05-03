@@ -789,7 +789,7 @@ false Zulu
     <database id="2" parent="1" name="P2">
       <ObjectId>17664</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>686</IntrospectionStateNumber>
+      <IntrospectionStateNumber>702</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17665|17667|1
 sequence|table|17673|17675|1
@@ -876,7 +876,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>687</IntrospectionStateNumber>
+      <IntrospectionStateNumber>703</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -1074,7 +1074,7 @@ UC/10
     <table id="47" parent="17" name="prova">
       <ObjectId>17728</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>663</StateNumber>
+      <StateNumber>701</StateNumber>
     </table>
     <table id="48" parent="17" name="prova_atleta_barco">
       <ObjectId>17804</ObjectId>
@@ -1526,7 +1526,13 @@ UC/10
       <StateNumber>663</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="111" parent="47" name="prova_pkey">
+    <column id="111" parent="47" name="descricao">
+      <Position>7</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>701</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="112" parent="47" name="prova_pkey">
       <ObjectId>17732</ObjectId>
       <StateNumber>663</StateNumber>
       <ColNames>id_prova</ColNames>
@@ -1536,14 +1542,14 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="112" parent="47" name="prova_pkey">
+    <key id="113" parent="47" name="prova_pkey">
       <ObjectId>17733</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_prova</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>prova_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="113" parent="47" name="fk_catprova">
+    <foreign-key id="114" parent="47" name="fk_catprova">
       <ObjectId>17734</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_catprova</ColNames>
@@ -1553,7 +1559,7 @@ UC/10
       <RefKeyName>catprova_pkey</RefKeyName>
       <RefColNames>id_catprova</RefColNames>
     </foreign-key>
-    <foreign-key id="114" parent="47" name="fk_federacao">
+    <foreign-key id="115" parent="47" name="fk_federacao">
       <ObjectId>17739</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_federacao</ColNames>
@@ -1563,28 +1569,28 @@ UC/10
       <RefKeyName>federacao_pkey</RefKeyName>
       <RefColNames>id_federacao</RefColNames>
     </foreign-key>
-    <column id="115" parent="48" name="id_atleta">
+    <column id="116" parent="48" name="id_atleta">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="116" parent="48" name="id_prova">
+    <column id="117" parent="48" name="id_prova">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="117" parent="48" name="id_barco">
+    <column id="118" parent="48" name="id_barco">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="118" parent="48" name="prova_atleta_barco_pkey">
+    <index id="119" parent="48" name="prova_atleta_barco_pkey">
       <ObjectId>17807</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_atleta
@@ -1596,7 +1602,7 @@ id_barco</ColNames>
       <CollationIds>0,0,0</CollationIds>
       <ClassIds>1978,1978,1978</ClassIds>
     </index>
-    <key id="119" parent="48" name="prova_atleta_barco_pkey">
+    <key id="120" parent="48" name="prova_atleta_barco_pkey">
       <ObjectId>17808</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_atleta
@@ -1605,7 +1611,7 @@ id_barco</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>prova_atleta_barco_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="120" parent="48" name="fk_atleta_prova_barco">
+    <foreign-key id="121" parent="48" name="fk_atleta_prova_barco">
       <ObjectId>17809</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_atleta</ColNames>
@@ -1615,7 +1621,7 @@ id_barco</ColNames>
       <RefKeyName>atleta_pkey</RefKeyName>
       <RefColNames>id_atleta</RefColNames>
     </foreign-key>
-    <foreign-key id="121" parent="48" name="fk_prova_atleta_barco">
+    <foreign-key id="122" parent="48" name="fk_prova_atleta_barco">
       <ObjectId>17814</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_prova</ColNames>
@@ -1625,7 +1631,7 @@ id_barco</ColNames>
       <RefKeyName>prova_pkey</RefKeyName>
       <RefColNames>id_prova</RefColNames>
     </foreign-key>
-    <foreign-key id="122" parent="48" name="fk_barco_atleta_prova">
+    <foreign-key id="123" parent="48" name="fk_barco_atleta_prova">
       <ObjectId>17819</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_barco</ColNames>
@@ -1635,7 +1641,7 @@ id_barco</ColNames>
       <RefKeyName>barco_pkey</RefKeyName>
       <RefColNames>id_barco</RefColNames>
     </foreign-key>
-    <column id="123" parent="49" name="id_resultado">
+    <column id="124" parent="49" name="id_resultado">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1643,37 +1649,37 @@ id_barco</ColNames>
       <DefaultExpression>nextval(&apos;resultado_id_resultado_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="124" parent="49" name="classificacao">
+    <column id="125" parent="49" name="classificacao">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="125" parent="49" name="id_prova">
+    <column id="126" parent="49" name="id_prova">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="126" parent="49" name="id_atleta">
+    <column id="127" parent="49" name="id_atleta">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="127" parent="49" name="tempo">
+    <column id="128" parent="49" name="tempo">
       <Position>5</Position>
       <DataType>varchar(200)|0s</DataType>
       <StateNumber>678</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="128" parent="49" name="id_barco">
+    <column id="129" parent="49" name="id_barco">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>685</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="129" parent="49" name="resultado_pkey">
+    <index id="130" parent="49" name="resultado_pkey">
       <ObjectId>17792</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_resultado</ColNames>
@@ -1683,14 +1689,14 @@ id_barco</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="130" parent="49" name="resultado_pkey">
+    <key id="131" parent="49" name="resultado_pkey">
       <ObjectId>17793</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_resultado</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>resultado_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="131" parent="49" name="fk_prova">
+    <foreign-key id="132" parent="49" name="fk_prova">
       <ObjectId>17794</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_prova</ColNames>
@@ -1700,7 +1706,7 @@ id_barco</ColNames>
       <RefKeyName>prova_pkey</RefKeyName>
       <RefColNames>id_prova</RefColNames>
     </foreign-key>
-    <foreign-key id="132" parent="49" name="fk_atleta">
+    <foreign-key id="133" parent="49" name="fk_atleta">
       <ObjectId>17799</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_atleta</ColNames>
@@ -1710,7 +1716,7 @@ id_barco</ColNames>
       <RefKeyName>atleta_pkey</RefKeyName>
       <RefColNames>id_atleta</RefColNames>
     </foreign-key>
-    <column id="133" parent="50" name="id_tipoutilizador">
+    <column id="134" parent="50" name="id_tipoutilizador">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1718,13 +1724,13 @@ id_barco</ColNames>
       <DefaultExpression>nextval(&apos;tipoutilizador_id_tipoutilizador_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="134" parent="50" name="tipo">
+    <column id="135" parent="50" name="tipo">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>602</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="135" parent="50" name="tipoutilizador_pkey">
+    <index id="136" parent="50" name="tipoutilizador_pkey">
       <ObjectId>17708</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_tipoutilizador</ColNames>
@@ -1734,7 +1740,7 @@ id_barco</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="136" parent="50" name="tipoutilizador_pkey">
+    <key id="137" parent="50" name="tipoutilizador_pkey">
       <ObjectId>17709</ObjectId>
       <StateNumber>602</StateNumber>
       <ColNames>id_tipoutilizador</ColNames>
