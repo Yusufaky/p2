@@ -104,10 +104,10 @@ public class Resultados {
         try {
             PreparedStatement stf = conn.prepareStatement(sqlCat);
             stf.setString(1, prova);
-            System.out.println("TESTE AQUI EM CIMA NO TRY: " + prova);
+            //System.out.println("TESTE AQUI EM CIMA NO TRY: " + prova);
 
             ResultSet rsf = stf.executeQuery();
-            System.out.println("TESTE AQUI EM CIMA NO ResultSet: " + stf);
+            //System.out.println("TESTE AQUI EM CIMA NO ResultSet: " + stf);
 
             while (rsf.next()) {
                 idProva = rsf.getInt("id_prova");

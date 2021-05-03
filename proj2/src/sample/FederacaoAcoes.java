@@ -266,7 +266,7 @@ public class FederacaoAcoes extends JFrame {
     private void btnAtualizarTabelaAction(ActionEvent e) {
         String prova = boxProvaListar.getSelectedItem().toString();
         PopulateTableAnswer(prova);
-        System.out.println("TESTE AQUI EM CIMA NO Atualizar: "+ prova);
+        //System.out.println("TESTE AQUI EM CIMA NO Atualizar: "+ prova);
 
     }
 
