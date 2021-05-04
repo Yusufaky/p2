@@ -350,7 +350,7 @@ public class Resultados {
         int barco_id = 0;
         Connection conn = Util.criarConexao();
 
-        String sqlProv = "SELECT id_catprova FROM catprova where descricao = ?";
+        String sqlProv = "SELECT id_prova FROM prova where descricao = ?";
         String sqlAtl = "SELECT id_atleta FROM atleta where nome = ?  ";
         String sqlBarco = "SELECT id_catbarco FROM catbarco where nome = ?";
         String sqlInsert = "INSERT INTO resultado (classificacao, id_prova, id_atleta, tempo, id_barco)  values ( ?, ?, ?,?,?)";
@@ -377,7 +377,7 @@ public class Resultados {
 
             }
             while (rsc.next()) {
-                prova_id = rsc.getInt("id_catprova");
+                prova_id = rsc.getInt("id_prova");
 
             }
             while (rsb.next()) {

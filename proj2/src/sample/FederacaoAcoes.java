@@ -81,12 +81,12 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownProva(){
-        List<Resultados> allDados = Resultados.categoria();
+        List<Resultados> provas = Resultados.prova();
 
 
         try {
 
-            for (Resultados data : allDados) {
+            for (Resultados data : provas) {
 
                 boxProva.addItem(data.getClassificacao());
 
@@ -251,6 +251,8 @@ public class FederacaoAcoes extends JFrame {
         String classificacao  = spClassificacao.getValue().toString();
 
         String tempo= minutos+":"+segundos;
+        System.out.println("ADD PROVA: " + prova);
+
 
         if (Resultados.insertResultado(atleta,prova,tempo,barco,classificacao) == true){
             lbCriadoSucessoResultado.setText("Sucesso");
