@@ -44,7 +44,7 @@ public class FederacaoAcoes extends JFrame {
 
     private void DropDownFederacao(){
 
-        List<Resultados> allDados = Resultados.federacao();
+        List<Resultados> allDados = Federacao.federacao();
 
 
         try {
@@ -63,7 +63,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownCategoria(){
-        List<Resultados> allDados = Resultados.categoria();
+        List<Resultados> allDados = Categoria.categoria();
 
 
         try {
@@ -81,7 +81,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownProva(){
-        List<Resultados> provas = Resultados.prova();
+        List<Resultados> provas = Prova.prova();
 
 
         try {
@@ -99,7 +99,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownProvaListar(){
-        List<Resultados> provas = Resultados.prova();
+        List<Resultados> provas = Prova.prova();
 
 
         try {
@@ -117,7 +117,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownAtleta(){
-        List<Resultados> allDados = Resultados.alteta();
+        List<Resultados> allDados = Atleta.alteta();
 
         try {
 
@@ -130,7 +130,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void DropDownBarco(){
-        List<Resultados> allDados = Resultados.barco();
+        List<Resultados> allDados = Barco.barco();
         try {
             for (Resultados data : allDados) {
                 boxBarco.addItem(data.getClassificacao());
@@ -337,12 +337,13 @@ public class FederacaoAcoes extends JFrame {
 
         //======== panelFederacao ========
         {
-            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
-            ( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border
-            . TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-            . Color. red) ,panelFederacao. getBorder( )) ); panelFederacao. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
-            propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
-            ; }} );
+            panelFederacao.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax.
+            swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border
+            . TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog"
+            ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,panelFederacao. getBorder
+            ( )) ); panelFederacao. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java
+            .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException
+            ( ); }} );
 
             //---- lbBemVindo ----
             lbBemVindo.setText("Bem-Vindo");
