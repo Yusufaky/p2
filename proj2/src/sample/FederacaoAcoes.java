@@ -4,6 +4,8 @@
 
 package sample;
 
+import com.sun.tools.javac.Main;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Connection;
@@ -40,6 +42,7 @@ public class FederacaoAcoes extends JFrame {
         } catch (
                 IndexOutOfBoundsException error) {
         }
+
     }
 
     private void DropDownFederacao(){
@@ -60,6 +63,7 @@ public class FederacaoAcoes extends JFrame {
                 IndexOutOfBoundsException error) {
         }
 
+
     }
 
     private void DropDownCategoria(){
@@ -78,6 +82,7 @@ public class FederacaoAcoes extends JFrame {
                 IndexOutOfBoundsException error) {
         }
 
+
     }
 
     private void DropDownProva(){
@@ -95,6 +100,7 @@ public class FederacaoAcoes extends JFrame {
         } catch (
                 IndexOutOfBoundsException error) {
         }
+
 
     }
 
@@ -127,17 +133,21 @@ public class FederacaoAcoes extends JFrame {
         } catch (
                 IndexOutOfBoundsException error) {
         }
+
     }
 
     private void DropDownBarco(){
+
         List<Resultados> allDados = Barco.barco();
         try {
             for (Resultados data : allDados) {
                 boxBarco.addItem(data.getClassificacao());
+
             }
         } catch (
                 IndexOutOfBoundsException error) {
         }
+
     }
 
     private void btnCriarProvaPainel(ActionEvent e) {
@@ -158,14 +168,28 @@ public class FederacaoAcoes extends JFrame {
     }
 
     private void btnLogOutAcao(ActionEvent e) {
+
+
         btnAddResultadoPAG.setVisible(false);
         btnCriarProvaPAG.setVisible(false);
         btnListarResultadosPAG.setVisible(false);
         btnLogOutPAG.setVisible(false);
+
         panel2.removeAll();
+        boxBarco.removeAllItems();
+        boxAtleta.removeAllItems();
+        boxProvaListar.removeAllItems();
+        boxProva.removeAllItems();
+        boxCategoria.removeAllItems();
+        boxFederacao.removeAllItems();
         panel2.add(panelLogin);
+
         panel2.repaint();
         panel2.revalidate();
+
+
+
+
 
     }
 
@@ -178,6 +202,8 @@ public class FederacaoAcoes extends JFrame {
         panel2.add(paneladdResultado);
         panel2.repaint();
         panel2.revalidate();
+ 
+
     }
 
     private void btnLoginPainel(ActionEvent e) {
@@ -273,7 +299,7 @@ public class FederacaoAcoes extends JFrame {
     }
 
 
-    private void initComponents() {
+    public void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Marcos
         panelFederacao = new JPanel();
